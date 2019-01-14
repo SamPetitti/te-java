@@ -15,7 +15,7 @@ actual command from other text in Unix documentation.
     refer to?
 ----
 
-<type your response here>
+the home directory
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on
@@ -24,7 +24,9 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+/Users/samuelpetitti/workspace/samuelpetitti-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld
+
+
 
 The present working directory displayed should match the directory you changed
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -40,31 +42,41 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+
+total 24
+drwxr-xr-x  6 samuelpetitti  staff   204 Jan 14 15:45 .
+drwxr-xr-x  7 samuelpetitti  staff   238 Jan 14 15:41 ..
+-rw-r--r--@ 1 samuelpetitti  staff  6148 Jan 14 15:45 .DS_Store
+drwxr-xr-x  3 samuelpetitti  staff   102 Jan 14 14:12 database
+-rwxr-xr-x  1 samuelpetitti  staff  1091 Jan 14 14:12 pom.xml
+drwxr-xr-x  4 samuelpetitti  staff   136 Jan 14 14:12 src
 
 
 ----
 5.  What do the "." and ".." directories displayed in the directory listing in
     Exercise 4 represent?
 ----
-
-<type your answer here>
+.  indicates where you are now
+.. indicates you to the parent
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
+-rw-r--r--@ 1 samuelpetitti  staff  6148 Jan 14 15:45 .DS_Store
+-rwxr-xr-x  1 samuelpetitti  staff  1091 Jan 14 14:12 pom.xml
 
-<type or copy-paste your answer here>
+
 
 
 ----
 7.  What are the names of the directories, including any dot-directories, displayed in
     the directory listing in Exercise 4?
 ----
-
-<type or copy-paste your answer here>
-
+drwxr-xr-x  6 samuelpetitti  staff   204 Jan 14 15:45 .
+drwxr-xr-x  7 samuelpetitti  staff   238 Jan 14 15:41 ..
+drwxr-xr-x  3 samuelpetitti  staff   102 Jan 14 14:12 database
+drwxr-xr-x  4 samuelpetitti  staff   136 Jan 14 14:12 src
 
 ----
 8.  pom.xml is a Maven build file. You will learn more about Maven in later
@@ -95,8 +107,15 @@ $ less database/pagila.sql
 
 You are encouraged to make "less" part of your standard command line toolkit.
 
-<type or copy-paste the first five lines of either file here>
+15:52 $ less pom.xml
 
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+        <groupId>com.techelevator</groupId>
+        <artifactId>helloworld</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <packaging>jar</packaging>
 ----
 9.  This is good time to create a Git snapshot of your progress.  Usually,
     you'll want to check the Git status to review the list of files that
