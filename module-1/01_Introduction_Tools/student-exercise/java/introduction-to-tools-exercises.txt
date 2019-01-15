@@ -3,7 +3,7 @@
     directory to the exercise directory.
 ----
 
-$ cd ~/workspace/exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
+$ ~/workspace/samuelpetitti-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld
 
 Note, do not enter the beginning "$" character. It represents the prompt for
 the command line. This convention is commonly used to visually separate the
@@ -57,7 +57,7 @@ drwxr-xr-x  4 samuelpetitti  staff   136 Jan 14 14:12 src
     Exercise 4 represent?
 ----
 .  indicates where you are now
-.. indicates you to the parent
+.. brings you back to the parent
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
