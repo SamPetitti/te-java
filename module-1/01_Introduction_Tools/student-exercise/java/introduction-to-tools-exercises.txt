@@ -164,7 +164,8 @@ along, and then at the end.
 $ cd src/main/java/com/techelevator
 $ <enter command to display present working directory>
 pwd
-<type or copy-paste your present working directory here>
+
+
 /Users/samuelpetitti/workspace/samuelpetitti-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator
 
 
@@ -245,10 +246,11 @@ Changes to be committed:
 	new file:   Helloworld.java.copy
 
 $ <enter the Git command to "stage" all changes>
-
+~/workspace/samuelpetitti-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator [master ↑·1|●1] 
 
 $ <enter the Git command to save all "staged" changes>
 [master 3739e4b] saving part 2 of module-1 ex
+ [master 3be7672] introduction to tools ex
  1 file changed, 9 insertions(+)
  create mode 100755 module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/src/main/java/com/techelevator/Helloworld.java.copy
 
@@ -256,11 +258,10 @@ $ git push origin master
 Counting objects: 19, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (11/11), done.
-Writing objects: 100% (19/19), 1.85 KiB | 630.00 KiB/s, done.
+Writing objects: 100% (19/19), 1.30 KiB | 663.00 KiB/s, done.
 Total 19 (delta 6), reused 0 (delta 0)
 To https://bitbucket.org/te-cle-cohort-10/SamuelPetitti-java
-   49ab009..3739e4b  master -> master
-
+   472abdf..3be7672  master -> master
 ----
 16. Delete the backup file, "Helloworld.java.copy" using the remove command.
 ----
@@ -306,6 +307,7 @@ $ pwd
 
 $ mkdir docs
 $ <enter the command to change directory to "docs" using a relative path>
+cd docs
 $ <enter command to display present working directory>
 $ pwd
 /Users/samuelpetitti/workspace/samuelpetitti-java/module-1/01_Introduction_Tools/student-exercise/java/java-helloworld/docs
