@@ -348,57 +348,89 @@ public class Exercises {
         tiny glass jars. If each jar is to contain six cookies each, how many
         cookies will not be placed in a jar?
         */
-			
-			System.out.println("moneyLeft = " + moneyLeft);
+			int totalGingerbreadCookies = 47;
+			int jarCapacity = 6;
+			int cookiesLeftover = 47 % 6;
+			System.out.println("cookiesLeftover = " + cookiesLeftover);
 
         /*
         41. She also prepared 59 croissants which she plans to give to her 8
         neighbors. If each neighbor received and equal number of croissants,
         how many will be left with Marian?
-        */
-			System.out.println("moneyLeft = " + moneyLeft);
+        */  
+			int preparedCroissants = 59;
+			int numOfNeighbors = 8;
+			int leftoverCroissants = 59 % 8;
+			System.out.println(" leftoverCroissants = " +  leftoverCroissants);
 
         /*
         42. Marian also baked oatmeal cookies for her classmates. If she can
         place 12 cookies on a tray at a time, how many trays will she need to
         prepare 276 oatmeal cookies at a time?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int cookiesPerTray = 12;
+			int totalCookies = 276;
+			int totalTraysNeeded = totalCookies / cookiesPerTray;
+			if(totalCookies % cookiesPerTray > 0) {
+				totalTraysNeeded += 1;
+			}
+			System.out.println("totalTraysNeeded = " + totalTraysNeeded);
+			
+			//conditional for if totalTraysNeeded not evenly divisible
+			
+			 
 
         /*
         43. Marian’s friends were coming over that afternoon so she made 480
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int totalPretzels = 480;
+			int oneServing = 12;
+			int totalServings = totalPretzels/oneServing;
+			System.out.println("totalServings = " + totalServings);
 
         /*
         44. Lastly, she baked 53 lemon cupcakes for the children living in the city
         orphanage. If two lemon cupcakes were left at home, how many
         boxes with 3 lemon cupcakes each were given away?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int lemonCupcakes = 53;
+			int cupcakesLeft = 2;
+			lemonCupcakes -= 2;
+			int cupcakesPerBox = 3;
+			int cupcakeBoxes = lemonCupcakes / cupcakesPerBox; 
+			System.out.println("cupcakeBoxes = " + cupcakeBoxes);
 
         /*
         45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
         were served equally to 12 people, how many carrot sticks were left
         uneaten?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int breakfastCarrots = 74;
+			int carrotEaters = 12;
+			int uneatenCarrots = breakfastCarrots % carrotEaters;
+			System.out.println("uneatenCarrots = " + uneatenCarrots);
 
         /*
         46. Susie and her sister gathered all 98 of their teddy bears and placed
         them on the shelves in their bedroom. If every shelf can carry a
         maximum of 7 teddy bears, how many shelves will be filled?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int susiesTeddyBears = 98;
+			int teddyBearsPerShelf = 7;
+			int filledShelves = susiesTeddyBears / teddyBearsPerShelf;
+			System.out.println("filledShelves = " + filledShelves);
 
         /*
         47. Susie’s mother collected all family pictures and wanted to place all of
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int picsPerAlbum = 20;
+			int totalPics = 480;
+			int albumsNeeded = totalPics/ picsPerAlbum;
+			System.out.println("albumsNeeded = " + albumsNeeded);
 
         /*
         48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -406,20 +438,31 @@ public class Exercises {
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int joeTradingCards = 94;
+			int cardsPerBox = 8;
+			int boxesFilled = joeTradingCards/cardsPerBox;
+			int cardsInUnfilledBox = 94 % 8;
+			System.out.println("There were " + boxesFilled + " boxes filled " +
+					cardsInUnfilledBox + " cards in the unfilled box.");
 
         /*
         49. Susie’s father repaired the bookshelves in the reading room. If he has
         210 books to be distributed equally on the 10 shelves he repaired,
         how many books will each shelf contain?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int shelvesRepaired = 10;
+			int totalBooks = 210;
+			int booksPerShelf = totalBooks/ shelvesRepaired;
+			System.out.println("booksPerShelf = " + booksPerShelf);
 
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-			System.out.println("moneyLeft = " + moneyLeft);
+			int croissantsBaked = 17;
+			int guests = 7;
+			int croissantsPerGuest = croissantsBaked/guests;
+			System.out.println("croissantsPerGuest  = " + croissantsPerGuest);
 
         /*
             CHALLENGE PROBLEMS
