@@ -377,10 +377,7 @@ public class Exercises {
 			System.out.println("totalTraysNeeded = " + totalTraysNeeded);
 			
 			//conditional for if totalTraysNeeded not evenly divisible
-			
-			 
-
-        /*
+		/*
         43. Marian’s friends were coming over that afternoon so she made 480
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
@@ -396,8 +393,8 @@ public class Exercises {
         boxes with 3 lemon cupcakes each were given away?
         */
 			int lemonCupcakes = 53;
-			int cupcakesLeft = 2;
-			lemonCupcakes -= 2;
+			int cupcakesLeftatHome = 2;
+			lemonCupcakes -= cupcakesLeftatHome;
 			int cupcakesPerBox = 3;
 			int cupcakeBoxes = lemonCupcakes / cupcakesPerBox; 
 			System.out.println("cupcakeBoxes = " + cupcakeBoxes);
@@ -474,7 +471,16 @@ public class Exercises {
         Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
         Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
         */
-
+			double billHourlyRate = 12 * 14/ 2.15;
+			double jillHourlyRate = 12 * 14/ 1.90;
+			double combinedRate = billHourlyRate + jillHourlyRate;
+			double combinedPaintJobFeet = 5 * 12 * 14;
+			double combinedPaintJobTime = combinedPaintJobFeet / combinedRate;
+			System.out.println("combinedPaintJobTime = " + combinedPaintJobTime);
+			double extraLongPaintJobFeet = 623 * 12 * 14;
+			double hoursPerDay = 8;
+			double extraLongPaintJobDays = extraLongPaintJobFeet/combinedRate/hoursPerDay;
+			System.out.println("extraLongPaintJobDays = " + extraLongPaintJobDays);
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
         build an additional variable to hold your full name in the order of last name, first name, middle initial. The
@@ -482,6 +488,12 @@ public class Exercises {
         with a period.
         Example: "Hopper, Grace B."
         */
+			String firstName = "Samuel";
+			String middleInit = "J.";
+			String lastName = "Petitti";
+			String fullLastNameFirst = lastName + ", "+ firstName + " " + middleInit; 
+			System.out.println(fullLastNameFirst);
+			
 
         /*
         The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
@@ -489,8 +501,10 @@ public class Exercises {
         Hint: The percent completed is the miles already travelled divided by the total miles.
         Challenge: Display as an integer value between 0 and 100 using casts.
         */
-
-
+			double nycChicagoDistance = 800;
+			double trainDistanceTraveled = 537;
+			double percentCompleted = trainDistanceTraveled/ nycChicagoDistance * 100;
+			System.out.println((int)percentCompleted + "%");
 	}
 
 }
