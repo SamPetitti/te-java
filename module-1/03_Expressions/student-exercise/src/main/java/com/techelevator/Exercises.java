@@ -257,9 +257,20 @@ public class Exercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
-		if(((a >= 10) && (a <= 20) && (b <= 20)) ||
-				((b >= 10) && (b <= 20) && (a <= 20))) {
-			return b;
+		if(((a >= 10) && (a <= 20) && (a > b))){
+			return a;
+		} else {
+			if(((a >= 10) && (a <= 20) && (b > 20))) {
+				return a;
+			} else {
+				if(((b >= 10) && (b <= 20) && (b > a))) {
+					return b;
+				} else {
+					if(((a >= 10) && (a <= 20) && (b > 20))) {
+						return b;
+					}
+				}
+			}
 		} return 0;
 	}
  
@@ -478,6 +489,13 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
+		if((num >= 0) && (num % 10) <= 2) {
+			return true;
+		} else {
+			if((num >= 0) && (num % 10) >= 8) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -489,8 +507,12 @@ public class Exercises {
 	 teenSum(13, 2) → 19
 	 */
 	public int teenSum(int a, int b) {
-		return 0;
-	}
+		if(((a >= 13) && (a <= 19) || 
+				(b >= 13) && (b <= 19))){
+					return 19;
+			} return a + b;
+		} 
+	
 
 	/*
 	 29. Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning
@@ -500,7 +522,17 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-		return false;
+		if(isAsleep) {
+			return false;
+		} else {
+			if((isMorning) && (isMom)){
+				return true;
+			} else {
+				if(isMorning) {
+				   return false;
+				}
+			}
+		} return true;
 	}
 
 	/*
@@ -513,7 +545,17 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
-		return 0;
+		if((tea < 5) || (candy < 5)) {
+			return 0;
+		} else {
+			if(((candy/2) >= tea) || ((tea/2) >= candy)) {
+				return 2;
+			} else {
+				if((tea >= 5) && (candy >= 5)) {
+					return 1;
+				}
+			}
+		} return 0;
 	}
 
 	/*
@@ -523,6 +565,17 @@ public class Exercises {
 	 twoAsOne(3, 2, 2) → false
 	 */
 	public boolean twoAsOne(int a, int b, int c) {
+		if((a + b) == c) {
+			return true;
+		} else {
+			if((a + c) == b) {
+				return true;
+			} else {
+				if((b + c) == a) {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 
@@ -534,6 +587,13 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		if((bOk) && (c > b)) {
+			return true;
+		} else {
+			if((b > a) && (c > b)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -546,6 +606,13 @@ public class Exercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+		if((c > b) && (b > a)) {
+			return true;
+		} else {
+			if(((c >= b) && (b >= a)) && (equalOk)) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -557,7 +624,24 @@ public class Exercises {
 	 loneSum(3, 3, 3) → 0
 	 */
 	public int loneSum(int a, int b, int c) {
-		return 0;
+		if((a == b) && (b == c)) {
+			return 0;
+		} else {
+		   if(a == b) {
+			return c;
+		} else {
+			if(a == c) {
+				return b;
+			} else {
+				if(b == c) {
+					return a;
+				} else {
+					
+					}
+				}
+			}
+		}
+		return a + b + c;
 	}
 
 	/*
@@ -571,7 +655,21 @@ public class Exercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
-		return 0;
-	}
+		if((a == 13) && (b == 13)) {
+			return 0;
+		} else {
+			if(a == 13) {
+				return c;
+			} else {
+				if(b == 13) {
+					return a;
+				} else {
+					if(c == 13) {
+						return a + b;
+					}
+				}
+			}
+		} return a + b + c;
+	} 
 
 }
