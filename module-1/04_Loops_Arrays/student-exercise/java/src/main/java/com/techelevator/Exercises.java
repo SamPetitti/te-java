@@ -98,7 +98,7 @@ public class Exercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		int[] reversed = new int[3];
+		int[] reversed = new int[nums.length];
 		int j = 0;
 		for(int i = nums.length - 1; i>=0; i--) {
 			reversed[j] = nums[i];
