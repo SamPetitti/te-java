@@ -106,6 +106,18 @@ public class Exercises {
 		}
  		return reversed;
 	}
+	 
+	/*public int[] reverse3(int[] nums) {
+		int holdValue = 0;
+		int j = nums.length-1;
+		for(int i = 0; i < nums.length/2; i++) {
+			nums[i] = holdValue;
+			nums[j] = 
+		} return nums;
+	} 
+	*/
+	
+	
 
 	/*
 	 8. Given an array of ints length 3, figure out which is larger between the first and last elements 
