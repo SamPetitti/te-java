@@ -97,25 +97,28 @@ public class Exercises {
 	 reverse3([5, 11, 9]) → [9, 11, 5]
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
-	public int[] reverse3(int[] nums) {
-		int[] reversed = new int[nums.length];
-		int j = 0;
-		for(int i = nums.length - 1; i>=0; i--) {
-			reversed[j] = nums[i];
-			j++;
-		}
- 		return reversed;
-	}
+	//[1,2,3,4];
 	 
-	/*public int[] reverse3(int[] nums) {
-		int holdValue = 0;
+	public int[] reverse3(int[] nums) {
+		int numHolder = 0;
 		int j = nums.length-1;
-		for(int i = 0; i < nums.length/2; i++) {
-			nums[i] = holdValue;
-			nums[j] = 
+		for(int i = 0; i < j; i++) {
+			numHolder = nums[i];
+			nums[i] = nums[j];
+			nums[j] = numHolder;
+			j--;
 		} return nums;
 	} 
-	*/
+
+	/*public int[] reverse3(int[] nums) {
+	int[] reversed = new int[nums.length];
+	int j = 0;
+	for(int i = nums.length - 1; i>=0; i--) {
+		reversed[j] = nums[i];
+		j++;
+	}
+		return reversed;
+} */
 	
 	
 
@@ -195,15 +198,15 @@ public class Exercises {
 	 sum13([1, 2, 2, 1, 13]) → 6 
 	 */
 	public int sum13(int[] nums) {
-		int sumNo13 = 0;
+		int sumStopAt13 = 0;
 		for(int i = 0; i < nums.length; i++) {
 			if(nums[i] == 13) {
 				break;
 			} else {
-				sumNo13 = sumNo13 + nums[i];
+				sumStopAt13 = sumStopAt13 + nums[i];
 			}
 		}
-			return sumNo13;
+			return sumStopAt13;
 	}
 
 	/*
@@ -213,14 +216,14 @@ public class Exercises {
 	 has22([2, 1, 2]) → false
 	 */
 	public boolean has22(int[] nums) {
-		int first2 = 0;
-		int second2 = 1;
+		int firstNum2 = 0;
+		int secondNum2 = 1;
 		for(int i = 0; i < nums.length - 1; i++) {
-			if((nums[first2] == 2) && (nums[second2] == 2)){
+			if((nums[firstNum2] == 2) && (nums[secondNum2] == 2)){
 				return true;
 			} else {
-				first2++;
-				second2++;
+				firstNum2++;
+				secondNum2++;
 			}
 		} return false;
 	}

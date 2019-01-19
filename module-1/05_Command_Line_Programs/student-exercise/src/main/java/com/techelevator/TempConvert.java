@@ -29,7 +29,7 @@ public class TempConvert {
 				if(tempNumLine.equals("C")) {
 					tempF = ((tempNum * 1.8) + 32);
 					}
-			System.out.println("Your temperature converted to Fahrenheight = " + tempF + "F");
+			System.out.println("Your temperature converted to Fahrenheit = " + tempF + "F");
 		}
 	}
 
