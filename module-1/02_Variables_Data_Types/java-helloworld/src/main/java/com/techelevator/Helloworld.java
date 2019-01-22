@@ -7,6 +7,14 @@ public class Helloworld { //every Java program is a class
 										//main() is the primary function in a Java program
 										//this displays whatever is inside the () on screen
 		System.out.println("Hello, world. My name is Sam Petitti.");
+		
+		String bad = "xbadbad";
+		System.out.println(bad.substring(1,4));
+		
+		String str = "sAMSAM";
+		System.out.print(str.substring(str.length()-1, str.length()));
+		String newStr = str.replace("A", "");
+		System.out.println(".replace =" + newStr);
 	}
 
 }
