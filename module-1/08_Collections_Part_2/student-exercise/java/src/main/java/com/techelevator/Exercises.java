@@ -330,21 +330,35 @@ public class Exercises {
 		for(int i = 0; i < words.length; i ++) {
 			int last2Counter = -1;
 			String last2 = words[i].substring(words[i].length()-2, words[i].length());
-			for(int j = 0; j < words[i].length(); j++) {
-				if((j+ 2 < words[i].length()) && (words[i].substring(j, j+ 2) == last2)) {
+			for(int j = 0; j < words[i].length()-1; j++) {
+				if(words[i].substring(j, j+ 2).equals(last2)){
 					last2Counter += 1;
-					
 				}
 			} last2Map.put(words[i], last2Counter);
 		} 
 //	System.out.println(last2);
 //	System.out.println(last2Counter);		
-		 
-	
-		
-		return last2Map;
+		 return last2Map;
 	}
 
+//	public int last2(String str) {
+//		int last2Counter = -1;
+//		//String last2Generator = str.substring(str.length() - 2, str.length());
+//		if(str.length() <= 1) {
+//			return 0;
+//		}
+//		String secondToLast = str.substring(str.length()-2, str.length());
+//		
+//		//System.out.println("second to last =" + secondToLast);
+//		for(int i = 0; i < str.length()-1; i++) {
+//			//System.out.println("moving substring = " +  str.substring(i, i+2));
+//			if(str.substring(i, i + 2).equals(secondToLast)) {
+//				last2Counter ++;
+//			}
+//		}
+//		return last2Counter;
+//	} 
+	
 	/*
 	 Given a list of Strings, return a list that contains the distinct values. In other words, no value is to be
 	 included more than once in the returned list. (Hint: Think Set)

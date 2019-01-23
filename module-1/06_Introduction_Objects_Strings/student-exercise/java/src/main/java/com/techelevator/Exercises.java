@@ -409,17 +409,24 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-//		int last2Counter = 0;
-//		//String last2Generator = str.substring(str.length() - 2, str.length());
-//		String secondToLast = str.substring(str.length()-2, str.length()-1);
-//		String last = str.substring(str.length()-1, str.length());
-//		String[] splitStr = str.split("");
-//		for(int i = 0; i < splitStr.length-1; i++) {
-//			if(splitStr[i].equals(secondToLast) && (splitStr[i+1]).equals(last)) {
-//				last2Counter = last2Counter + 1;
-//			}
-//		} return last2Counter -1;
-		return 0;
+		int last2Counter = -1;
+		//String last2Generator = str.substring(str.length() - 2, str.length());
+		if(str.length() <= 1) {
+			return 0;
+		}
+		String secondToLast = str.substring(str.length()-2, str.length());
+		
+		//System.out.println("second to last =" + secondToLast);
+		for(int i = 0; i < str.length()-1; i++) {
+			//System.out.println("moving substring = " +  str.substring(i, i+2));
+			if(str.substring(i, i + 2).equals(secondToLast)) {
+				last2Counter ++;
+			}
+			
+		}
+		
+		
+		return last2Counter;
 	} 
 
 	/*
@@ -475,7 +482,7 @@ public class Exercises {
 			}
 		}
 		//for loop i + 2;
-		System.out.println(altedPairs);
+		//System.out.println(altedPairs);
 		return altedPairs;
 		
 	}
