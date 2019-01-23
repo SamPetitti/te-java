@@ -187,20 +187,35 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		List<Integer> interleavedList = new ArrayList<Integer>();
-		int minListLength = Math.min(listOne.size(), listTwo.size());
-		for(int i = 0; i < minListLength; i++) {
-			interleavedList.add(listOne.get(i));
-			interleavedList.add(listTwo.get(i));
-		} 
-			List<Integer> longestList = (listOne.size() > listTwo.size()) ? listOne:
-					listTwo;			
-		for(int i = minListLength; i < longestList.size(); i++) {
-			interleavedList.add(longestList.get(i));
+//		List<Integer> interleavedList = new ArrayList<Integer>();
+//		int minListLength = Math.min(listOne.size(), listTwo.size());
+//		for(int i = 0; i < minListLength; i++) {
+//			interleavedList.add(listOne.get(i));
+//			interleavedList.add(listTwo.get(i));
+//		} 
+//			List<Integer> longestList = (listOne.size() > listTwo.size()) ? listOne:
+//					listTwo;			
+//		for(int i = minListLength; i < longestList.size(); i++) {
+//			interleavedList.add(longestList.get(i));
+		List<Integer> interleavedList = new ArrayList <Integer>();
+		for(int i = 0; i < Math.max(listOne.size(), listTwo.size()); i++){
+			if(i < listOne.size()) {
+				interleavedList.add(listOne.get(i));
+			}
+			if(i<listTwo.size()) {
+				interleavedList.add(listTwo.get(i));
+			}
 		} return interleavedList;
 		
 	}
 
+	
+
+	
+	
+	
+	
+	
 	/*
 	 Given a list of Integers representing seat numbers, group them into ranges 1-10, 11-20, and 21-30.
 	 (Any seat number less than 1, or greater than 30 is invalid, and can be ignored.) Preserve the order

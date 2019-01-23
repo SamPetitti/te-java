@@ -1,7 +1,11 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Exercises {
 
@@ -35,7 +39,26 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		animalName = animalName.toLowerCase();
+		Map<String, String> animalTraits = new HashMap<String, String>();  
+		animalTraits.put("rhino", "Crash");
+		animalTraits.put("giraffe", "Tower");
+		animalTraits.put("elephant", "Herd");
+		animalTraits.put("lion", "Tower");
+		animalTraits.put("crow", "Murder");
+		animalTraits.put("pigeon", "Kit");
+		animalTraits.put("flamingo", "Pat");
+		animalTraits.put("deer", "Herd");
+		animalTraits.put("dog", "Pack");
+		animalTraits.put("crocodile", "Float");
+		if (!animalTraits.containsKey(animalName)) { 
+		    return "unknown";
+		}
+		
+	    return animalTraits.get(animalName);
+		
+		// mapName.get(animalNameIn.toLowerCase());
+		//set map key values to all one case, use string method to convert what is sent in to your case;
 	}
 
 	/*
@@ -61,7 +84,19 @@ public class Exercises {
 	 *
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map<String, Double> itemDiscount = new HashMap<String, Double>();
+		itemNumber = itemNumber.toLowerCase();
+		itemDiscount.put("kitchen4001", 0.20);
+		itemDiscount.put("garage1070", 0.15);
+		itemDiscount.put("livingroom", 0.10);
+		itemDiscount.put("kitchen6073", 0.40);
+		itemDiscount.put("bedroom3434", 0.60);
+		itemDiscount.put("bath0073", 0.15);
+		if(!itemDiscount.containsKey(itemNumber)) {
+			return 0.00;
+		}
+		
+		return itemDiscount.get(itemNumber);
 	}
 
 	/*
@@ -75,7 +110,15 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		int halfForPeter = peterPaul.get("Peter") - (peterPaul.get("Peter")/ 2);
+		int halfForPaul = peterPaul.get("Peter") - halfForPeter;
+		int paulStartingMoney = peterPaul.get("Paul");
+		if((peterPaul.get("Peter") > 0) && (peterPaul.get("Paul") < 1000)){
+			peterPaul.put("Paul", halfForPaul + paulStartingMoney);
+			peterPaul.put("Peter", halfForPeter);
+			return peterPaul;
+		} 
+		return peterPaul;
 	}
 
     /*
@@ -88,7 +131,22 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		Map <String, Integer> peterPaulPartnership = new HashMap <String, Integer>();
+		int peterQuarter = peterPaul.get("Peter")/4;
+		int peterLessQuarter = peterPaul.get("Peter") - peterQuarter;
+		int paulQuarter = peterPaul.get("Paul")/4;
+		int paulLessQuarter = peterPaul.get("Paul") - paulQuarter;
+		int peterPaulCombined = 0;
+		if((peterPaul.get("Peter") >= 5000) & (peterPaul.get("Paul") >= 10000)){
+			peterPaulCombined =  peterQuarter + paulQuarter;
+			peterPaul.put("Peter", peterLessQuarter);
+			peterPaul.put("Paul", paulLessQuarter);
+			//System.out.println(peterPaulCombined);
+			peterPaul.put( "PeterPaulPartnership", peterPaulCombined);
+			return peterPaul;
+		}
+		
+		return peterPaul;
 	}
 
 	/*
@@ -100,7 +158,12 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		Map <String, String> firstLast = new HashMap <String, String>();
+		for(int i = 0; i < words.length; i ++) {
+			String[] word = words[i].split("");
+			firstLast.put(word[0], word[word.length-1]);
+		}
+		return firstLast;
 	}
 
 	/*
@@ -115,7 +178,19 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map<String, Integer> countedWords = new HashMap <String, Integer>();
+		for(int i = 0; i < words.length; i++) {
+			if(!countedWords.containsKey(words[i])){
+				countedWords.put(words[i], 1);
+			} else {
+				if(countedWords.containsKey(words[i])) {
+					int newCount = countedWords.get(words[i]) + 1;
+					countedWords.put(words[i], newCount);
+				}
+			}
+		}
+		
+		return countedWords;
 	}
 
 	/*
@@ -130,7 +205,18 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		Map<Integer, Integer> countedIntegers = new HashMap <Integer, Integer>();
+		for(int i = 0; i < ints.length; i++) {
+			if(!countedIntegers.containsKey(ints[i])){
+				countedIntegers.put(ints[i], 1);
+			} else {
+				if(countedIntegers.containsKey(ints[i])) {
+					int newCount = countedIntegers.get(ints[i]) + 1;
+					countedIntegers.put(ints[i], newCount);
+				}
+			}
+		}
+		return countedIntegers;
 	}
 
 	/*
@@ -143,7 +229,27 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+		Map<String, Integer> twoOrMore = new HashMap <String,Integer>();
+		Map<String, Boolean> twoOrMoreTrueOrFalse = new HashMap <String, Boolean>();
+		for(int i = 0; i < words.length; i++) {
+			if(!twoOrMore.containsKey(words[i])){
+				twoOrMore.put(words[i], 1);
+			} else {
+				if(twoOrMore.containsKey(words[i])) {
+					int newCount = twoOrMore.get(words[i]) + 1;
+					twoOrMore.put(words[i], newCount);
+				}
+			}
+		}
+		for(Map.Entry<String, Integer> isItTwo : twoOrMore.entrySet()) {
+		    if (isItTwo.getValue() < 2) {
+		        twoOrMoreTrueOrFalse.put(isItTwo.getKey(), false);
+		    } else {
+		        twoOrMoreTrueOrFalse.put(isItTwo.getKey(), true);
+		    }
+		}
+		
+		return twoOrMoreTrueOrFalse;
 	}
 
 	/*
@@ -157,9 +263,52 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		return null;
+		//Map <String, Integer> consolidated = new HashMap <String, Integer>();
+//		for(Map.Entry<String, Integer> mainItems : mainWarehouse.entrySet()) {
+//			consolidated.put(mainItems.getKey() , mainItems.getValue());
+//		}
+//		for(Map.Entry<String, Integer> remoteItem: remoteWarehouse.entrySet()) {
+//			if(mainWarehouse.containsKey(remoteItem)){
+//				mainWarehouse.put(remoteItem.getKey(), remoteItem.getValue() + consolidated.get(remoteItem.getKey()));
+//			} else {
+//				if(!consolidated.containsKey(remoteItem.getKey())) {
+//					consolidated.put(remoteItem.getKey(), remoteItem.getValue());
+//				}			
+//			}
+//		}
+		
+		for(String key : remoteWarehouse.keySet()) {
+			int value = remoteWarehouse.get(key);
+			if(mainWarehouse.containsKey(key)) {
+				mainWarehouse.put(key, value + mainWarehouse.get(key));
+			} else {
+				mainWarehouse.put(key, value);
+			}
+		}
+//		
+		return mainWarehouse;
 	}
 
+//	System.out.println(consolidated);
+//	for(Map.Entry<String, Integer> remoteItems: remoteWarehouse.entrySet()) {
+//		if(consolidated.containsKey(remoteItems.getKey())){
+//			consolidated.put(remoteItems.getKey(), remoteItems.getValue() + mainWarehouse.get(remoteItems));
+//		} else {
+//			if(!consolidated.containsKey(remoteItems.getKey())) {
+//				consolidated.put(remoteItems.getKey(), remoteItems.getValue());
+//			}
+//		}
+//	}
+//	return consolidated;
+	
+	//USE SET!
+	
+	
+	
+	
+	
+	
+	
 	/*
 	 * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
 	 *
@@ -176,7 +325,24 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+		Map <String, Integer> last2Map = new HashMap <String, Integer>();
+		
+		for(int i = 0; i < words.length; i ++) {
+			int last2Counter = -1;
+			String last2 = words[i].substring(words[i].length()-2, words[i].length());
+			for(int j = 0; j < words[i].length(); j++) {
+				if((j+ 2 < words[i].length()) && (words[i].substring(j, j+ 2) == last2)) {
+					last2Counter += 1;
+					
+				}
+			} last2Map.put(words[i], last2Counter);
+		} 
+//	System.out.println(last2);
+//	System.out.println(last2Counter);		
+		 
+	
+		
+		return last2Map;
 	}
 
 	/*
@@ -186,7 +352,15 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+		Set<String> distinctVals = new HashSet<String>();
+		List<String> distinctValsList = new ArrayList<String>();
+		for(int i = 0; i < stringList.size(); i++) {
+			distinctVals.add(stringList.get(i));
+		}
+		for(String val : distinctVals) {
+		    distinctValsList.add(val);
+		}
+		return distinctValsList;
 	}
 
 }
