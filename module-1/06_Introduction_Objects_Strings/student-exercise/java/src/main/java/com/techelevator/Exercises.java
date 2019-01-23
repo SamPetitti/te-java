@@ -234,11 +234,16 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		if(index == str.length() - 1) {
-			return str.substring(0, 2);
-		} else {
-			return str.substring(index, index + 1);
-		}
+//		if(str.length() <= 2) {
+//			return str;
+//		} else {
+//			if((index + 2) > str.length()){
+//				return str.substring(0, 2);
+//			} else {
+//				return str.substring(index, index + 2);
+//			}
+//		}
+		return null;
 	}
 
 	/*
@@ -404,16 +409,17 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		int last2Counter = 0;
-		//String last2Generator = str.substring(str.length() - 2, str.length());
-		String secondToLast = str.substring(str.length()-2, str.length()-1);
-		String last = str.substring(str.length()-1, str.length());
-		String[] splitStr = str.split("");
-		for(int i = 0; i < splitStr.length-1; i++) {
-			if(splitStr[i].equals(secondToLast) && (splitStr[i+1]).equals(last)) {
-				last2Counter = last2Counter + 1;
-			}
-		} return last2Counter -1;
+//		int last2Counter = 0;
+//		//String last2Generator = str.substring(str.length() - 2, str.length());
+//		String secondToLast = str.substring(str.length()-2, str.length()-1);
+//		String last = str.substring(str.length()-1, str.length());
+//		String[] splitStr = str.split("");
+//		for(int i = 0; i < splitStr.length-1; i++) {
+//			if(splitStr[i].equals(secondToLast) && (splitStr[i+1]).equals(last)) {
+//				last2Counter = last2Counter + 1;
+//			}
+//		} return last2Counter -1;
+		return 0;
 	} 
 
 	/*
@@ -424,9 +430,33 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-		String noX = str.replace("x", "");
-		return noX;
-		}
+//		String noMiddleX = "";
+//		int xAtEnd = 0;
+//		String[] strSplit = str.split("");
+//		if(str.equals("x")) {
+//			return("x");
+//		}
+//		if((strSplit[0]).equals("x")) {
+//			noMiddleX += "x";
+//		}
+//		if((strSplit[str.length()-1]).equals("x")){
+//			xAtEnd += 1;
+//		}
+//		//System.out.println("[1] =" + strSplit[0]);
+//		for(int i = 0; i < strSplit.length; i++) {
+//			if(!strSplit[i].equals("x")){
+//				noMiddleX += strSplit[i];
+//			}
+//		}
+//		if(xAtEnd > 0) {
+//			System.out.println("string x=" + noMiddleX);
+//			return noMiddleX + "x";
+//		} else {
+//		System.out.println("string x=" + noMiddleX);
+//		return noMiddleX;
+//		}
+		return null;
+	}
 
 	/*
 	 Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
@@ -435,7 +465,18 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		String altedPairs = "";
+		String[] splitStr = str.split("");
+		for(int i = 0; i < str.length(); i+=4) {
+			if((i + 2) <= str.length()) {
+			altedPairs += str.substring(i, i+2);
+			}else {
+				altedPairs += str.substring(i);
+			}
+		}
+		//for loop i + 2;
+		System.out.println(altedPairs);
+		return altedPairs;
 		
 	}
 

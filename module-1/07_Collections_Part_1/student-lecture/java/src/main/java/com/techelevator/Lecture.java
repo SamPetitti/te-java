@@ -14,8 +14,10 @@ public class Lecture {
 		System.out.println("####################");
 		System.out.println("       LISTS");
 		System.out.println("####################");
+//ArrayList is a type of List
+//To define one: List<data-type-to-be-stored> name = new ArrayList<datatype-to-be-stored>();
 		
-		List<String> names = new ArrayList<String>();
+		List<String> names = new ArrayList<String>(); //empty elements to the ArrayList
 		names.add("Frodo");
 		names.add("Sam");
 		names.add("Pippin");
@@ -29,10 +31,10 @@ public class Lecture {
 		System.out.println("####################");
 		System.out.println("Lists are ordered");
 		System.out.println("####################");
-		
+		//.size() returns the number of elements in ArrayList
 		//the elements will be returned in the same order they were added
 		for(int i = 0; i < names.size(); i++) {
-			System.out.println(names.get(i));
+			System.out.println(names.get(i)); //.get()- retrieves element at the index
 		}
 		
 		
