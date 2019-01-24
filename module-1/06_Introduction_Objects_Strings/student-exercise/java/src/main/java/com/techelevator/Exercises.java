@@ -234,16 +234,18 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-//		if(str.length() <= 2) {
-//			return str;
-//		} else {
-//			if((index + 2) > str.length()){
-//				return str.substring(0, 2);
-//			} else {
-//				return str.substring(index, index + 2);
-//			}
-//		}
-		return null;
+		if(str.length() <= 2) {
+			return str;
+		} else {
+			if((index + 2) > str.length()) {
+				return str.substring(0, 2);
+			} else {
+			if(index < 0) {
+				return str.substring(0, 2);
+				}
+			} return str.substring(index, index+2);
+		
+		}
 	}
 
 	/*
@@ -422,10 +424,7 @@ public class Exercises {
 			if(str.substring(i, i + 2).equals(secondToLast)) {
 				last2Counter ++;
 			}
-			
 		}
-		
-		
 		return last2Counter;
 	} 
 
@@ -437,32 +436,25 @@ public class Exercises {
 	 stringX("xabxxxcdx") → "xabcdx"
 	 */
 	public String stringX(String str) {
-//		String noMiddleX = "";
-//		int xAtEnd = 0;
-//		String[] strSplit = str.split("");
-//		if(str.equals("x")) {
-//			return("x");
-//		}
-//		if((strSplit[0]).equals("x")) {
-//			noMiddleX += "x";
-//		}
-//		if((strSplit[str.length()-1]).equals("x")){
-//			xAtEnd += 1;
-//		}
-//		//System.out.println("[1] =" + strSplit[0]);
-//		for(int i = 0; i < strSplit.length; i++) {
-//			if(!strSplit[i].equals("x")){
-//				noMiddleX += strSplit[i];
-//			}
-//		}
-//		if(xAtEnd > 0) {
-//			System.out.println("string x=" + noMiddleX);
-//			return noMiddleX + "x";
-//		} else {
-//		System.out.println("string x=" + noMiddleX);
-//		return noMiddleX;
-//		}
-		return null;
+	if(str.length() <= 1) {
+		return str;
+	}
+	String noX = "";	
+	String splitStr[] = str.split("");
+	for(int i = 0; i < splitStr.length; i++) {
+		if(!splitStr[i].equals("x")) {
+			noX += splitStr[i];
+		}
+	}
+	//System.out.println(noX);
+	if(str.startsWith("x")) {
+		noX = "x" + noX;
+	} 
+	if(str.endsWith("x")) {
+		noX = noX + "x";
+	}
+		
+		return noX;
 	}
 
 	/*
