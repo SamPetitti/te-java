@@ -28,6 +28,11 @@ public class Lecture {
 		System.out.println("Elizabeth lives in "+nameToZip.get("Elizabeth"));
 		System.out.println();
 		
+//		to loop through all the entries in a map
+//		1. Put the keySet into a Set Object
+//		2. Use a for-each to go through the set object - use the datatype of the key as your for-each Variable
+//		3. Inside loop use the current for-each variable to .get() from map
+		
 		System.out.println("We can also retrieve a Set of keys and iterate over them using a for loop:");
 		Set<String> keys = nameToZip.keySet();		// returns a Set of all of the keys in the Map
 		for(String name : keys) {
