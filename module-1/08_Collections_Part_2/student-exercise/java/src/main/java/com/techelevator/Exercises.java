@@ -113,7 +113,7 @@ public class Exercises {
 		int halfForPeter = peterPaul.get("Peter") - (peterPaul.get("Peter")/ 2);
 		int halfForPaul = peterPaul.get("Peter") - halfForPeter;
 		int paulStartingMoney = peterPaul.get("Paul");
-		if((peterPaul.get("Peter") > 0) && (peterPaul.get("Paul") < 1000)){
+		if(peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000){
 			peterPaul.put("Paul", halfForPaul + paulStartingMoney);
 			peterPaul.put("Peter", halfForPeter);
 			return peterPaul;
@@ -137,7 +137,7 @@ public class Exercises {
 		int paulQuarter = peterPaul.get("Paul")/4;
 		int paulLessQuarter = peterPaul.get("Paul") - paulQuarter;
 		int peterPaulCombined = 0;
-		if((peterPaul.get("Peter") >= 5000) & (peterPaul.get("Paul") >= 10000)){
+		if(peterPaul.get("Peter") >= 5000 && peterPaul.get("Paul") >= 10000){
 			peterPaulCombined =  peterQuarter + paulQuarter;
 			peterPaul.put("Peter", peterLessQuarter);
 			peterPaul.put("Paul", paulLessQuarter);
@@ -210,10 +210,8 @@ public class Exercises {
 			if(!countedIntegers.containsKey(ints[i])){
 				countedIntegers.put(ints[i], 1);
 			} else {
-				if(countedIntegers.containsKey(ints[i])) {
 					int newCount = countedIntegers.get(ints[i]) + 1;
 					countedIntegers.put(ints[i], newCount);
-				}
 			}
 		}
 		return countedIntegers;
@@ -235,11 +233,9 @@ public class Exercises {
 			if(!twoOrMore.containsKey(words[i])){
 				twoOrMore.put(words[i], 1);
 			} else {
-				if(twoOrMore.containsKey(words[i])) {
 					int newCount = twoOrMore.get(words[i]) + 1;
 					twoOrMore.put(words[i], newCount);
 				}
-			}
 		}
 		for(Map.Entry<String, Integer> isItTwo : twoOrMore.entrySet()) {
 		    if (isItTwo.getValue() < 2) {

@@ -1,36 +1,33 @@
-package com.techelevator.shoppingcart;
-
-public class SamShoppingCart {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		ShoppingCart samCart = new ShoppingCart();
-		
-		samCart.addItems(5, 0.99);
-		
-		samCart.addItems(10, 2.99);
-		
-		samCart.printCart();
-		
-		ShoppingCart jasonCart = new ShoppingCart();
-		
-		jasonCart.addItems(44, 99.99);
-		
-		jasonCart.empty();
-		
-		jasonCart.printCart();
-		
-		ShoppingCart bridgetCart = new ShoppingCart();
-		
-		bridgetCart.addItems(4, 7.00);
-		
-		bridgetCart.addItems(5, 9.00);
-		
-		bridgetCart.getTotalNumberOfItems();
-		
-		bridgetCart.printCart();
-
-	}
-
-}
+//package com.techelevator.shoppingcart;
+//
+//public class SamShoppingCart {
+//
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		
+//		ShoppingCart bridgetCart = new ShoppingCart();
+//		
+////		
+////		
+////		bridgetCart.addItems("chocolate", 7, 1.00);
+////		
+////		bridgetCart.addItems("coat", 1, 200.00);
+////		
+////		bridgetCart.addItems("house", 2, 250000.00);
+////		
+////		bridgetCart.printCart();
+////		
+////		ShoppingCart samCart = new ShoppingCart();
+////		
+////		samCart.addItems("guitars", 10, 1999.99);
+////		
+////		samCart.addItems("pedals", 4, 152.42);
+////		
+////		samCart.printCart();
+////		
+////		
+////	
+////
+////	}
+////
+////}

@@ -2,6 +2,7 @@ package com.techelevator;
 
 public class PlayingCard {
 // define the data members of the class
+<<<<<<< HEAD
 	private String suit;
 	private String color;
 	private int value;
@@ -53,10 +54,45 @@ public PlayingCard(String suit, int value) {
 	
 public PlayingCard(String suit, int value, String image, String shape) {
 	this.suit =  suit;
+=======
+private String suit;
+private String color;
+private int    value;
+private String image;
+private String shape;
+
+// define methods for the class
+
+// default constructor - assign default values to data of the class
+
+public PlayingCard() {
+	suit = "Joker";
+	color = "red";
+	value = 0;
+	image = "jester";
+	shape = "rectangle";
+}
+
+// ctor for a card for only a suit, value
+public PlayingCard(String suit, int value) {
+// the keyword "this" indicates a member in the object being processed
+	this.suit = suit;
+	determineColor(suit);
+	this.value = value;
+	image = value + " " + suit;
+	shape = "rectangle";
+}
+
+
+// ctor to create card with suit, value, image, shape
+public PlayingCard(String suit, int value, String image, String shape) {
+	this.suit = suit;
+>>>>>>> fa9d93e0ea31406930c4915172a3e8ebbec35daf
 	determineColor(suit);
 	this.value = value;
 	this.image = image;
 	this.shape = shape;
+<<<<<<< HEAD
 	}
 
 //method to determine card color based on suit
@@ -74,6 +110,13 @@ private void determineColor(String suit) {
 		}
 	}
 }
+=======
+}	
+
+
+// method to determine card color based on the suit
+// restrict usage to members of class - don't want class users to be able to be to run this
+>>>>>>> fa9d93e0ea31406930c4915172a3e8ebbec35daf
 
 /**
  * @return the suit
@@ -95,6 +138,7 @@ public void setSuit(String suit) {
 public int getValue() {
 	return value;
 }
+<<<<<<< HEAD
 
 public String getValueName() {
 	switch (value) { // check the value in the variable specified
@@ -104,6 +148,16 @@ public String getValueName() {
 		return "Two";
 	case 3:
 		return "Three";
+=======
+public String getValueName() {
+	switch (value) {  // check the value in the variable give
+	case 1:           // if the value is this...
+		return "Ace"; // do this
+	case 2:
+		return "Two";
+	case 3:
+		return "Three";	
+>>>>>>> fa9d93e0ea31406930c4915172a3e8ebbec35daf
 	case 4:
 		return "Four";
 	case 5:
@@ -126,9 +180,13 @@ public String getValueName() {
 		return "King";
 	}
 	return "unknown";
+<<<<<<< HEAD
 	
 }
 
+=======
+}
+>>>>>>> fa9d93e0ea31406930c4915172a3e8ebbec35daf
 /**
  * @param value the value to set
  */
@@ -171,8 +229,36 @@ public String getColor() {
 	return color;
 }
 
+<<<<<<< HEAD
 
 	
 }
 	
 
+=======
+private void determineColor(String suit) {
+	
+	if (suit.equals("Clubs") || suit.equals("Spades")) {
+		 color = "black";
+	}
+	else {
+		if (suit.equals("Hearts") || suit.equals("Diamonds")) {
+			color = "red";
+		}
+		else {
+			color = "unknown";
+		}
+	}
+}
+
+
+// method to display the values in a PlayingCard
+public void showCard() {
+	System.out.println("Card  suit: " + suit);
+	System.out.println("Card color: " + color);
+	System.out.println("Card value: " + value);
+	System.out.println("Card image: " + image);
+	System.out.println("Card shape: " + shape);
+}
+}
+>>>>>>> fa9d93e0ea31406930c4915172a3e8ebbec35daf
