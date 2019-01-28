@@ -22,12 +22,12 @@ public class Helloworld { //every Java program is a class
 		//System.out.println(".replace =" + newStr);
 		
 		
-		//List<Integer> numsList = new ArrayList<Integer>(Arrays.asList(4 , 4, 23, 5, 2, 77, 4, 6, 0 , 2 ,4 ,3, 11));
-		
-//		String moreOddsEvens(ArrayList<Integer> integerList) {
+//List<Integer> numsList = new ArrayList<Integer>(Arrays	.asList(4 , 4, 23, 5, 2, 77, 4, 6, 0 , 2 ,4 ,3, 11));
+////		
+//		public String moreOddsEvens(List<Integer> integerList) {
 //			int odds = 0;
 //			int evens = 0;
-//			for(num : integerList) {
+//			for(Integer num : integerList) {
 //				if(num % 2 == 0) {
 //					evens ++;
 //				} else {
@@ -40,8 +40,8 @@ public class Helloworld { //every Java program is a class
 //				return "evens";
 //			}
 //		}
-		
-	}
+//		
+//	}
 		
 		
 

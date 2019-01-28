@@ -7,11 +7,11 @@ public class FruitTree {
 	
 	public FruitTree(String typeOfFruit, int startingPiecesOfFruit) {
 		this.typeOfFruit = typeOfFruit;
-		piecesOfFruitLeft = startingPiecesOfFruit;
+		this.piecesOfFruitLeft = startingPiecesOfFruit;
 	}
 	
 	public boolean pickFruit(int numberOfPiecesToRemove) {
-		if(numberOfPiecesToRemove > piecesOfFruitLeft) {
+		if(numberOfPiecesToRemove > getPiecesOfFruitLeft()) {
 			return false;
 		} else {
 			if(numberOfPiecesToRemove <= piecesOfFruitLeft) {

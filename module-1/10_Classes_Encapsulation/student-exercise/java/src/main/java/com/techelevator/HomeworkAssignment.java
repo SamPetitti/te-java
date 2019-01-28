@@ -22,22 +22,22 @@ public class HomeworkAssignment {
 	 */
 	public String getLetterGrade() {
 		if(((double)totalMarks/(double)possibleMarks) * 100 >= 90){
-			letterGrade = "A";
+			this.letterGrade = "A";
 		} else {
 			if(((double)totalMarks/(double)possibleMarks) * 100 >= 80) {
-				letterGrade = "B";
+				this.letterGrade = "B";
 			} else {
 				if(((double)totalMarks/(double)possibleMarks) * 100 >= 70) {
-					letterGrade = "C";
+					this.letterGrade = "C";
 				} else {
 					if(((double)totalMarks/(double)possibleMarks) * 100 >= 60) {
-						letterGrade = "D";
+						this.letterGrade = "D";
 					} else {
-						letterGrade = "F";
+						this.letterGrade = "F";
 					}
 				}
 			}
-		} return letterGrade;
+		} return this.letterGrade;
 	}
 
 

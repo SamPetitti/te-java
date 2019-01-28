@@ -16,7 +16,7 @@ public class Employee {
 	}
 	
 	public void raiseSalary(double percent) {
-		annualSalary = ((annualSalary * percent)/100) + annualSalary;
+		this.annualSalary = ((annualSalary * percent)/100) + annualSalary;
 	}
 	
 

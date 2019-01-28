@@ -19,11 +19,11 @@ public class Airplane {
 	//for this method - shouldn't it be (totalNumberOfSeats < availableFirstClassSeats) that passes?
 	
 	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats ) {
-		if((forFirstClass) && (totalNumberOfSeats < totalFirstClassSeats)) {
+		if((forFirstClass) && (totalNumberOfSeats < getAvailableFirstClassSeats())) {
 			bookedFirstClassSeats+= totalNumberOfSeats;
 			return true;
 		} else {
-			if((!forFirstClass) && (totalNumberOfSeats < totalCoachSeats)) {
+			if(totalNumberOfSeats < getAvailableCoachSeats()){
 				bookedCoachSeats+= totalNumberOfSeats;
 				return true;
 				} 
