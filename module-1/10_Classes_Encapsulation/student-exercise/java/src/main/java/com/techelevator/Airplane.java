@@ -3,10 +3,10 @@ package com.techelevator;
 public class Airplane {
 	
 	private String planeNumber;
-	private int bookedFirstClassSeats;
+	private int bookedFirstClassSeats = 0;
 	private int availableFirstClassSeats;
 	private int totalFirstClassSeats;
-	private int bookedCoachSeats;
+	private int bookedCoachSeats = 0;
 	private int availableCoachSeats;
 	private int totalCoachSeats;
 	
@@ -16,7 +16,7 @@ public class Airplane {
 		this.totalCoachSeats = totalCoachSeats;
 	}
 	
-	//for this method - shouldn't it be (totalNumberOfSeats < availableFirstClassSeats) that passes?
+	
 	
 	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats ) {
 		if((forFirstClass) && (totalNumberOfSeats < getAvailableFirstClassSeats())) {

@@ -15,7 +15,9 @@ public class BuyoutAuction extends Auction {
 	 * @param buyoutPrice the set price that immediately wins the auction
 	 */
 	public BuyoutAuction(String itemForSale, int buyoutPrice) {
-		super(itemForSale);
+		super(itemForSale); // derived class MUST call a base class ctor to initialize the data from the base class
+		//itemForSale is being sent to the superclass. BuyoutAuction doesn't know what to do with it- but the Auction class does! 
+		//first needs to deal with this("pass it to the boss") and then it handles the buyoutPrice
 		this.buyoutPrice = buyoutPrice;
 	}
 	
@@ -31,7 +33,8 @@ public class BuyoutAuction extends Auction {
 			if(offeredBid.getBidAmount() >= buyoutPrice) {
 				offeredBid = new Bid(offeredBid.getBidder(), buyoutPrice);
 			}
-			isCurrentWinningBid = super.placeBid(offeredBid);
+			isCurrentWinningBid = super.placeBid(offeredBid);// going to run the super class placeBid() method
+			//so you need to call this method with super.placeBid();
 		}
 		return isCurrentWinningBid;
 	}
