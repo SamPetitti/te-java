@@ -4,7 +4,12 @@ package com.techelevator;
 // Generic Worker class to be used as a base class for all type of workers
 //****************************************************************************************
 
-public class Worker {
+public abstract class Worker implements PaidEmployees { // abstract class cannot be instantiated by itself
+							   // can only be a base class
+	
+							  //requiring methods of the PaidEmployee interface
+							  //doesn't necessarily need PaidEmployee methods, becuase as an abstract class,
+							// it will not be implemented
 	//****************************************************************************************
 	// Data members / Instance Data
 	//****************************************************************************************

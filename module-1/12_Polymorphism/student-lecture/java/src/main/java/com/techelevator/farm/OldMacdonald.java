@@ -3,9 +3,22 @@ package com.techelevator.farm;
 public class OldMacdonald {
 	public static void main(String[] args) {
 		
-		FarmAnimal[] farmAnimals = new FarmAnimal[] { new Cow(), new Chicken() };
+
+//		// datatype			 content/initial-value
+//		FarmAnimal anAnimal = new FarmAnimal("Sheep", "baa");
+//		FarmAnimal Bessie   = new Cow();
+//		FarmAnimal FogHorn  = new Chicken();
+//		
+//		System.out.println(anAnimal.getSound());
+//		System.out.println(Bessie.getSound());
+//		System.out.println(FogHorn.getSound());
+//		
 		
-		for(FarmAnimal animal : farmAnimals) {
+	//FarmAnimal is a datatype, someFarmAnimals is an array, and holds newCow() and new Chicken();
+FarmAnimal[] someFarmAnimals = new FarmAnimal[] { new Cow(), new Chicken() };
+		
+		for(FarmAnimal animal : someFarmAnimals) {
+//			Chooses method based on DATATYPE !IN! object, not !OF! object
 			String name = animal.getName();
 			String sound = animal.getSound();
 			System.out.println("Old MacDonald had a farm, ee, ay, ee, ay, oh!");

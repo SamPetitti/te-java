@@ -3,7 +3,7 @@ package com.techelevator;
 //****************************************************************************************
 // Hourly Worker based on Worker class
 //****************************************************************************************
-public class HourlyWorker extends Worker {
+public class HourlyWorker extends Worker implements PaidEmployees{
 	
 	//****************************************************************************************
 	// Data members / Instance Variables
@@ -30,6 +30,13 @@ public double calculateWeeklyPay(int numHoursWorked) {
 		else
 			return (hourlyRate * 40) + ((hourlyRate * .5) * (numHoursWorked - 40));
 
-	
 }
+
+public double calculateIncomeTax(double pay) {
+	return 0.0;
+}
+
+
+
+
 }

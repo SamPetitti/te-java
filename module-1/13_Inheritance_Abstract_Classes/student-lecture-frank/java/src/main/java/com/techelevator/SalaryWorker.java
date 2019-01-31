@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class SalaryWorker extends Worker {
+public final class SalaryWorker extends Worker { //final says this class cannot be inherited
 	
 	//****************************************************************************************
 	// Data members / Instance Data
@@ -31,6 +31,10 @@ public class SalaryWorker extends Worker {
 	@Override		
 	public double calculateWeeklyPay(int numHoursWorked) {
 		return annualSalary / 52;
+	}
+	
+	public double calculateIncomeTax(double pay) {
+		return pay * taxRate;
 	}
 
 }
