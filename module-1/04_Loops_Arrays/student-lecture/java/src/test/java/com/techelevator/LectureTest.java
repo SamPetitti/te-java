@@ -5,17 +5,17 @@ import static org.junit.Assert.*;
 
 public class LectureTest {
 	
-    Lecture exercises = new Lecture();
+    Lecture exercises = new Lecture(); // going to give us access to all the data and methods in this class
     
     @Test
-    public void testReturnArray() {
+    public void testReturnArray() { //object-w/-code.method-to-test(any-params-for-the-method)
         assertArrayEquals(new int[] {80,8080,443}, exercises.returnArray());
-    }
+    }					//expected-result        , method-to-test
 
     @Test
     public void testReturnFirstElement() {
         assertEquals("That's not the first element in that array", 80, exercises.returnFirstElement());
-    }
+    }				//message-if-test-fails						//expected//method-to-test
 
     @Test
     public void testReturnLastElement() {

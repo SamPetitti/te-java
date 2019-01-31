@@ -26,6 +26,16 @@ public class Car implements Vehicle {
 	public boolean isHasTrailer() {
 		return hasTrailer;
 	}
+	
+	
+	@Override
+	
+	public String getDescription() {
+		if(hasTrailer) {
+			return "Car(with Trailer)";
+		} 
+		return "Car";
+	}
 
 	
 	

@@ -39,8 +39,8 @@ public class TollCalculator {
 		
 		
 		
-		System.out.println("Vehicle            Distance Traveled      $ Toll");
-		System.out.println("------------------------------------------------");
+		System.out.println("*Vehicle            Distance Traveled      $ Toll*");
+		System.out.println("**************************************************");
 		
 		int totalMilesTraveled = 0;
 		double totalTollRevenue = 0;
@@ -48,8 +48,8 @@ public class TollCalculator {
 			int distance = (int)(Math.random() * 230);
 		
 		double tollFee = car.calculateToll(distance);
-		System.out.printf("%-17s  %-20d   $%5.2f  \n",
-						 car.getClass().getSimpleName(),
+		System.out.printf("%-17s  %-20d   $%5.2f   \n",
+						 car.getDescription(),
 						 distance,
 						 tollFee);
 						 totalMilesTraveled += distance;	

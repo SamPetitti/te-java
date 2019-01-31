@@ -14,6 +14,12 @@ public class Tank implements Vehicle {
 		return 0.0;
 	}
 	
+	@Override
+	
+	public String getDescription() {
+		return "Tank";
+		
+	}
 	
 
 

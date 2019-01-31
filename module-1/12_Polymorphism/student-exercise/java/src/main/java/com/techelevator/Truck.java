@@ -9,9 +9,6 @@ public class Truck implements Vehicle {
 		
 	}
 	
-	
-
-	
 	/**
 	 * @return the numberOfAxles
 	 */
@@ -35,6 +32,14 @@ public class Truck implements Vehicle {
 		} return 0.0;
 
 	}
+	
+@Override
+	
+	public String getDescription() {
+		return "Truck (" +  this.numberOfAxles + " Axles)";
+		
+	}
+	
 
 
 
