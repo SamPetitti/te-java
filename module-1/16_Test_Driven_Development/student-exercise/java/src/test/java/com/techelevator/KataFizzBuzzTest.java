@@ -20,6 +20,11 @@ public class KataFizzBuzzTest {
 	public void Fizz_Buzz_Test_101() {
 		Assert.assertEquals("That is not the expected result", "", new KataFizzBuzz().fizzBuzz(101));
 	}
+	@Test
+	public void Fizz_Buzz_Test_Divisible_By3() {
+		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(12));
+		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(75));
+	}
 	
 	
 }
