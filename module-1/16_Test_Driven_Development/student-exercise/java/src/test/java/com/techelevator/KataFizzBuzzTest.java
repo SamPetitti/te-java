@@ -27,9 +27,14 @@ public class KataFizzBuzzTest {
 	}
 	
 	@Test
-	public void Fizz_Buzz_Test_Divisible_Has3_in_Num() {
+	public void Fizz_Buzz_Test_Has3_in_Num() {
 		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(13));
 		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(73));
+	}
+	@Test
+	public void Fizz_Buzz_Test_Divisible_By5() {
+		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(35));
+		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(65));
 	}
 	
 }
