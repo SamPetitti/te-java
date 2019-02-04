@@ -4,16 +4,22 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class KataFizzBuzzTest {
-	
-	@Test
-	public void Fizz_Buzz_Test_0() {
-		Assert.assertEquals("That is not the expected result", "0", new KataFizzBuzz().fizzBuzz(0));
-	}
 	@Test
 	public void Fizz_Buzz_Test_1() {
 		Assert.assertEquals("That is not the expected result", "1", new KataFizzBuzz().fizzBuzz(1));
 	}
-	
+	@Test
+	public void Fizz_Buzz_Test_50() {
+		Assert.assertEquals("That is not the expected result", "50", new KataFizzBuzz().fizzBuzz(50));
+	}
+	@Test
+	public void Fizz_Buzz_Test_0() {
+		Assert.assertEquals("That is not the expected result", "", new KataFizzBuzz().fizzBuzz(0));
+	}
+	@Test
+	public void Fizz_Buzz_Test_101() {
+		Assert.assertEquals("That is not the expected result", "", new KataFizzBuzz().fizzBuzz(101));
+	}
 	
 	
 }
