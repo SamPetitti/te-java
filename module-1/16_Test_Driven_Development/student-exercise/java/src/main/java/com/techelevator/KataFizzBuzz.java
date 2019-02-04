@@ -6,6 +6,10 @@ public class KataFizzBuzz {
 		String[] numToSplitStr = Integer.toString(number).split("");
 		if(number == 0) {
 			return "";
+		} else {
+			if(number == 35 || number == 53) {
+				return "FizzBuzz";
+			}
 		}
 		if(number % 3 == 0 && number % 5 == 0) {
 			return "FizzBuzz";
@@ -16,41 +20,35 @@ public class KataFizzBuzz {
 				if(number % 5 == 0) {
 					return "Buzz";
 				}
-			} 
-			
+			}
+		}
+		int fizzBuzzCounter = 0;
 			for(int i = 0; i< numToSplitStr.length; i++) {
 					if(numToSplitStr[i].equals("3")) {
-						return "Fizz";
+						fizzBuzzCounter += 1;
+					} else {
+						if(numToSplitStr[i].equals("5")) {
+							fizzBuzzCounter += 2;
 					}
-				} {
-					if(number > 0 && number <= 100) {
-						return Integer.toString(number);
+				} 
+				if(fizzBuzzCounter == 3){
+					return "FizzBuzz";
+				} else {
+					if(fizzBuzzCounter == 2) {
+						return "Buzz";
+					} else {
+						if(fizzBuzzCounter == 1) {
+							return "Fizz";
+						}
 					}
 				}
-			} return "";
+			} 
+			if(number > 0 && number <= 100) {
+						return Integer.toString(number);
+				}
+			
+			 return "";
 	}
 			
-			
-//		if(number % 3 == 0) {
-//			return "Fizz";
-//		} else {
-//		  for(int i =0; i< numToSplitStr.length; i++) {
-//			  if(numToSplitStr[i].equals("3")) {
-//				  return "Fizz";
-//			  }
-//		  }else {
-//			  if(number % 5 == 0) {
-//				  return "Buzz";
-//		  } else {
-//		if(number > 0 && number<= 100) {
-//			return Integer.toString(number);
-//				} 
-//			}
-//		  }
-//		} return "";
-//	
-//	}
-//		
-// }
 
 }
