@@ -2,9 +2,15 @@ package com.techelevator;
 
 public class CheckingAccount extends BankAccount {
 
-	public CheckingAccount(String accountHolder, String accountNumber, DollarAmount balance) {
-        super(accountHolder, accountNumber, balance);
+	
+	//no additional attributes / data
+	
+		// a subclass ctor must get data required by the superclass and call/invoke the super class ctor
+	public CheckingAccount(String accountHolder, String accountNumber, DollarAmount balance) { //extends means this is a superclass of BankAccout
+        super(accountHolder, accountNumber, balance);										// BankAccount is a superclass
+        																					//  inherit all data and methods of the superclass
     }
+	
 
     public CheckingAccount(String accountHolder, String accountNumber) {
         super(accountHolder, accountNumber);

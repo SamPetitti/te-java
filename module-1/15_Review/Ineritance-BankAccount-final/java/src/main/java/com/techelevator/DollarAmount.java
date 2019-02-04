@@ -1,13 +1,13 @@
 package com.techelevator;
 
 public class DollarAmount {
-
+	//fact that we say it's final says it's a constant. Constants should always be in UpperScores, 
     public static final DollarAmount ZERO_DOLLARS = new DollarAmount(0);
     
     private int totalAmountInCents;
     
-    public DollarAmount(int totalAmountInCents) {
-        this.totalAmountInCents = totalAmountInCents;
+    public DollarAmount(int totalAmountInCents) {    //method recieves one-int-parm and has no return
+        this.totalAmountInCents = totalAmountInCents; //same name as a class and has no-return = constructor
     }
 
     public DollarAmount(int dollars, int cents) {
@@ -56,13 +56,15 @@ public class DollarAmount {
 
     public int compareTo(DollarAmount amountToCompare) {
         if(this.isGreaterThan(amountToCompare)) {
-            return 1;
+            return 1;  // return 1 if first is GT second
         } else if(this.isLessThan(amountToCompare)) {
-            return -1;
+            return -1; //return -1 if first -s LT second
         } else {
-            return 0;
+            return 0; // return 0 if they are equal
         }
     }
+    
+    //OBJECT CLASS OVERRIDES
     
     @Override
     public boolean equals(Object obj) {
@@ -77,6 +79,8 @@ public class DollarAmount {
     public int hashCode() {
     	return totalAmountInCents;
     }
+    
+    //always override toString, equals, hashcode.
     
     @Override
     public String toString() {
