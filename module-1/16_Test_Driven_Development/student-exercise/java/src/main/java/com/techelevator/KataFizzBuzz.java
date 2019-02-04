@@ -7,13 +7,18 @@ public class KataFizzBuzz {
 		if(number == 0) {
 			return "";
 		}
-		if(number % 3 == 0) {
-			return "Fizz";
+		if(number % 3 == 0 && number % 5 == 0) {
+			return "FizzBuzz";
 		} else {
-			if(number % 5 == 0) {
-				return "Buzz";
+			if(number % 3 == 0) {
+				return "Fizz";
 			} else {
-				for(int i = 0; i< numToSplitStr.length; i++) {
+				if(number % 5 == 0) {
+					return "Buzz";
+				}
+			} 
+			
+			for(int i = 0; i< numToSplitStr.length; i++) {
 					if(numToSplitStr[i].equals("3")) {
 						return "Fizz";
 					}
@@ -22,8 +27,7 @@ public class KataFizzBuzz {
 						return Integer.toString(number);
 					}
 				}
-			}
-		} return "";
+			} return "";
 	}
 			
 			

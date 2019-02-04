@@ -9,8 +9,8 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("That is not the expected result", "1", new KataFizzBuzz().fizzBuzz(1));
 	}
 	@Test
-	public void Fizz_Buzz_Test_50() {
-		Assert.assertEquals("That is not the expected result", "50", new KataFizzBuzz().fizzBuzz(50));
+	public void Fizz_Buzz_Test_52() {
+		Assert.assertEquals("That is not the expected result", "52", new KataFizzBuzz().fizzBuzz(52));
 	}
 	@Test
 	public void Fizz_Buzz_Test_0() {
@@ -23,7 +23,7 @@ public class KataFizzBuzzTest {
 	@Test
 	public void Fizz_Buzz_Test_Divisible_By3() {
 		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(12));
-		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(75));
+		Assert.assertEquals("That is not the expected result", "Fizz", new KataFizzBuzz().fizzBuzz(33));
 	}
 	
 	@Test
@@ -36,6 +36,12 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(35));
 		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(65));
 	}
+	@Test
+	public void Fizz_Buzz_Test_Divisible_By3_and_5() {
+		Assert.assertEquals("That is not the expected result", "FizzBuzz", new KataFizzBuzz().fizzBuzz(15));
+		Assert.assertEquals("That is not the expected result", "FizzBuzz", new KataFizzBuzz().fizzBuzz(75));
+	}
+	
 	
 }
 
