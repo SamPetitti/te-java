@@ -40,9 +40,14 @@ public class KataPrimeFactorsTest {
 	Assert.assertEquals("That is not the expected result", Arrays.asList(2, 5) , new KataPrimeFactors().factorize(10));
 	}
 	@Test
+	public void kata_Prime_Factors_Test_2_2_2_2_2_3() {
+	Assert.assertEquals("That is not the expected result", Arrays.asList(2, 2, 2, 2, 2,3) , new KataPrimeFactors().factorize(96));
+	}
+	@Test
 	public void kata_Prime_Factors_Test_2_7_23() {
 	Assert.assertEquals("That is not the expected result", Arrays.asList(2, 7, 23) , new KataPrimeFactors().factorize(322));
 	}
+	
 	
 	
 	
