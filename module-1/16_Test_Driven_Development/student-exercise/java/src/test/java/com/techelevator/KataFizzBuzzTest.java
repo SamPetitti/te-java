@@ -41,6 +41,12 @@ public class KataFizzBuzzTest {
 		Assert.assertEquals("That is not the expected result", "FizzBuzz", new KataFizzBuzz().fizzBuzz(15));
 		Assert.assertEquals("That is not the expected result", "FizzBuzz", new KataFizzBuzz().fizzBuzz(75));
 	}
+	@Test 
+	public void Fizz_Buzz_Test_Has_5() {
+		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(55));
+		Assert.assertEquals("That is not the expected result", "Buzz", new KataFizzBuzz().fizzBuzz(95));
+	}
+	
 	
 	@Test
 	public void Fizz_Buzz_Test_has3_and5() {
