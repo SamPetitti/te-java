@@ -14,14 +14,14 @@ public class ExceptionsLecture {
 		 * By using try/catch blocks, you can stop the Exception from exiting the method and provide
 		 * code to handle it. */
 		System.out.println("The following cities: ");
-		String[] cities = new String[] { "Cleveland", "Columbus", "Cincinatti" };
-		try {
+		String[] cities = new String[] { "Cleveland", "Columbus", "Cincinnati" };
+		try { // contains code that might throw an exception
 			System.out.println(cities[0]);
 			System.out.println(cities[1]);
 			System.out.println(cities[2]);
 			System.out.println(cities[3]);  // This statement will throw an ArrayIndexOutOfBoundsException
 			System.out.println("are all in Ohio."); // This line won't execute because the previous statement throws an Exception
-		} catch(ArrayIndexOutOfBoundsException e) {
+		} catch(ArrayIndexOutOfBoundsException e) { // catch an exception if one is thrown in the try block
 			// Flow of control resumes here after the Exception is thrown
 			System.out.println("XXX   Uh-oh, something went wrong...   XXX");
 		}
