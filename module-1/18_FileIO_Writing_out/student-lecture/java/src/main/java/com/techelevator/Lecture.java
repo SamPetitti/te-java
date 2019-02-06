@@ -62,7 +62,7 @@ public class Lecture {
 		
 		if(newDirectory.exists()) {
 			System.out.println("Sorry, "+newDirectory.getAbsolutePath()+" already exists.");
-			System.exit(1);
+			System.exit(1); //immediately exit the call stack and issue the return code specify
 		} else {
 			if(newDirectory.mkdir()) {
 				System.out.println("New directory created at "+newDirectory.getAbsolutePath());
@@ -98,7 +98,8 @@ public class Lecture {
 		System.out.print("Enter a message to be stored in the new file >>> ");
 		String message = userInput.nextLine();
 		
-		try(PrintWriter writer = new PrintWriter(newFile)) {
+		//*THIS IS ALL THERE IS TO WRITING A NEW FILE**********************************************************
+		try(PrintWriter writer = new PrintWriter(newFile)) { //instead of scanner, we use the class PrintWriter
 			writer.println(message);
 		} // When we exit the try block, this cause the file to be closed and an automatic flush of the buffer to trigger
 		

@@ -38,7 +38,7 @@ public class QuizMaker {
 				} totalQuestions ++;
 
 			}
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
