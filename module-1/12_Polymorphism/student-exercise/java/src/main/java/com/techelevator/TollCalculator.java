@@ -52,6 +52,7 @@ public class TollCalculator {
 		System.out.printf("%-17s  %-20d   $%5.2f   \n",
 						 car.getDescription(),
 						 distance,
+				
 						 tollFee);
 						 totalMilesTraveled += distance;	
 						 totalTollRevenue += tollFee;

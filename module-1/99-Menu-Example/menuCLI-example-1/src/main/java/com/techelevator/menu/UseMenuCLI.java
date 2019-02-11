@@ -41,7 +41,7 @@ import com.techelevator.view.Menu;  // Menu processing class
 public class UseMenuCLI {  // Class representing the MenuCLI process to be used
 			
 	public static void main(String[] args) {
-
+		
 		Menu menu = new Menu(System.in, System.out);  // Define Menu object with input and output sources (keyboard, screen)		
 
 		/********************************************************************************
