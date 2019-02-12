@@ -9,12 +9,25 @@
 --    ORDER BY DESC     -- Descending Sequence (high-low)
 
 -- Show Populations of all countries in acscending order
+SELECT name, population
+FROM country
+ORDER BY population asc;
 
+SELECT name, population
+FROM country
+ORDER BY 2;
 
 -- Show Populations of all countries in descending order
+SELECT name, population
+FROM country
+ORDER BY population desc;
 
 
 -- Show  the n ames of countries and continents in ascending order
+SELECT name, continent
+FROM country
+ORDER by continent, name;
+
 
 --------------------------------------------------------------------------------------------------------
 -- Limiting the number of rows in the result
@@ -23,7 +36,11 @@
 --
 --
 -- Show the name and average life expectancy of the countries with the 10 highest life expectancies.
-
+SELECT name, lifeexpectancy
+FROM country
+WHERE lifeexpectancy IS NOT NULL
+Order by lifeexpectancy desc
+limit 10; -- in sql it's "TOP" not "LIMIT"
 
 --------------------------------------------------------------------------------------------------------
 -- Concatenating values 
@@ -34,9 +51,10 @@
 -- Show the name & state in the format: "city-name, state"
 -- of all cities in California, Oregon, or Washington.
 -- sorted by state then city
-
-
-
+SELECT name || ', ' || district AS City_Name
+FROM city
+WHERE district in ('California', 'Oregon', 'Washington')
+ORDER by district, name;
 --------------------------------------------------------------------------------------------------------
 -- Aggregate functions - produce one row in result for each group specified
 --
@@ -58,19 +76,31 @@
 --
 --
 -- Show average life expectancy in the world
-
-
+SELECT avg(lifeexpectancy), min(lifeexpectancy), max(lifeexpectancy)
+FROM country;
 -- Show the total population in Ohio
+SELECT sum (population)
+FROM city
+WHERE district = 'Ohio';
 
 
 -- Show the surface area of the smallest country in the world
+SELECT name, min(surfacearea)
+FROM country
+GROUP by name
+order by 2
+limit 1;
 
 
 -- Show The 10 largest countries (by surface area) in the world
-
-
+SELECT name, surfacearea
+FROM country
+order by surfacearea desc
+LIMIT 10;
 -- Show the number of countries who declared independence in 1991
-
+SELECT count(*)
+FROM country
+WHERE indepyear = 1991;
 --------------------------------------------------------------------------------------------------------
 -- GROUP BY  - Specify the group to which the aggregate functions apply
 --
@@ -81,11 +111,16 @@
 --
 
 -- Show the number of countries where each language is spoken, order show them from most countries to least
-
-
-
+select language, count(*)
+from countrylanguage
+group by language
+order by 2 desc;
 -- Show the average life expectancy of each continent ordered from highest to lowest
-
+SELECT continent, avg(lifeexpectancy)
+FROM country
+WHERE lifeexpectancy is not null
+GROUP BY continent
+ORDER by avg desc;
 
 
 -- Exclude Antarctica from consideration for average life expectancy
@@ -113,12 +148,22 @@
 -- (These are advanced concepts we will discuss later, if there is time)
 --
 -- Show the cities under the same given government leader
-
+SELECT name
+FROM city
+WHERE countrycode in (SELECT code
+                       FROM country
+                        WHERE headofstate = 'Jacques Chirac');
 
 -- Show countries with the same independece year
 
 
--- Show the cities cities whose country has not yet declared independence yet
+-- Show the cities whose country has not yet declared independence yet
+SELECT name
+FROM city
+WHERE countrycode in 
+        (SELECT code
+         FROM country           
+         WHERE indepyear IS NULL);
 
 
 --------------------------------------------------------------------------------------------------------
