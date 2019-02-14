@@ -68,21 +68,73 @@
 --   FROM table2
 -- WHERE predicate
 ------------------------------------------------------------------------------------------------
---
+--Show last_name of all actors in the movie "FINDING ANACONDA"
 -- 
---
 
+SELECT last_name 
+   FROM actor, film_actor, film
+   WHERE actor.actor_id = film_actor.actor_id -- join condition - matching condition
+        and film.film_id = film_actor.film_id -- join condition -matching condition 
+        and film.title = 'FINDING ANACONDA'; == filterng condition
+        
+        
+        
+        
+Select last_name        
+FROM actor
+        inner join 
+        film_actor
+    on actor.actor_id = film_actor.actor_id -- join condition
+        inner join
+        film
+     on film.film_id = film_actor.film_id -- join condition
+ WHERE title = 'FINDING ANACONDA';
 --
 -- ********* INNER JOIN ***********
 
 -- Let's find out who made payment 16666:
+SELECT customer_id
+FROM payment
+WHERE payment_id = 16666;
 
 -- Ok, that gives us a customer_id, but not the name. We can use the customer_id to get the name FROM the customer table
+SELECT customer.customer_id, first_name || ', ' ||last_name
+FROM payment 
+        inner join 
+        customer
+        on payment.customer_id = customer.customer_id
+WHERE payment_id = 16666;
+
+--A correlation name can be assigned toa  table to make coding easier.
+--(nickname)
+SELECT c.customer_id, c.first_name || ', ' ||c.last_name
+FROM payment p
+        inner join 
+        customer c
+        on p.customer_id = c.customer_id
+WHERE payment_id = 16666;
+
+
+
+
 
 -- We can see that the * pulls back everything from both tables. We just want everything from payment and then the first and last name of the customer:
-
--- But when did they return the rental? Where would that data come from? From the rental table, so let’s join that.
-
+SELECT p.* , c.first_name || ', ' ||c.last_name
+FROM payment p
+        inner join 
+        customer c
+        on p.customer_id = c.customer_id
+WHERE payment_id = 16666;
+-- But when did they return the rental? Where would that data come from? From the rental table, so let’s join that
+SELECT * , c.first_name || ', ' ||c.last_name
+FROM payment p
+        inner join 
+        customer c
+        on p.customer_id = c.customer_id
+        inner join
+        customer c
+        on 
+WHERE payment_id = 16666;
 -- What did they rent? Film id can be gotten through inventory.
 
 -- What if we wanted to know who acted in that film?    
@@ -105,5 +157,22 @@
 -- Gathers a list of all first names used by actors and customers
 -- By default removes duplicates
 
+SELECT first_name
+FROM actor
+        union 
+        select first_name
+        from customer;
+        
+SELECT first_name , 'Actor'
+FROM actor
+        union 
+        select first_name, 'Customer'
+        from customer     
+ORDER by first_name;  
+        
+        
+        
+        
+        
 
 -- Gather the list, but this time note the source table with 'A' for actor and 'C' for customer
