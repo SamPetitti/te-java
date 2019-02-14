@@ -150,7 +150,7 @@ FROM store sto
       on sto.store_id = sta.store_id
         inner join
         address ad
-      on sta.address_id = ad.address_id;
+      on sto.address_id = ad.address_id;
 
 -- 13. The first and last name of the top ten customers ranked by number of rentals 
 -- (#1 should be “ELEANOR HUNT” with 46 rentals, #10 should have 39 rentals)
@@ -179,6 +179,25 @@ FROM customer c
 
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store 
 -- (Store 1 has 7928 total rentals and Store 2 has 8121 total rentals)
+SELECT sum(pay.amount) as Total_Sales, avg(pay.amount) as AVG_payment, count(rent.rental_id), sto.store_Id, ad.address
+FROM address ad
+        inner join
+        store sto
+      on ad.address_id = sto.address_id
+        inner join
+        inventory inv
+      on inv.store_id = sto.store_id
+        inner join
+        rental rent
+      on inv.inventory_id = rent.inventory_id
+        inner join
+        payment pay
+      on rent.rental_id = pay.rental_id
+GROUP by sto.store_id, ad.address
+ORDER by count(rent.rental_id) desc;
+
+
+
 
 
 -- 16. The top ten film titles by number of rentals
