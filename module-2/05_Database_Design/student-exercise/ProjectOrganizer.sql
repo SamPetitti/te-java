@@ -39,6 +39,7 @@ CREATE TABLE department (
 department_id serial NOT NULL,
 name varchar(20) NOT NULL,
 department_size integer NOT NULL,
+CHECK(department_size >= 0),
 CONSTRAINT pk_department_department_id PRIMARY KEY (department_id)
 );
 
@@ -47,6 +48,7 @@ project_id serial NOT NULL,
 project_name varchar(20) NOT NULL,
 project_start_date varchar(20) NOT NULL,
 project_employees integer NOT NULL,
+CHECK(project_employees >=0),
 CONSTRAINT pk_project_project_id PRIMARY KEY(project_id)
 );
 
@@ -114,33 +116,48 @@ INSERT INTO employee(job_title_id, last_name, first_name, gender, birthday, hire
 VALUES (6, 'Schnieder', 'Maria', 'F', '12/4/1968', '11/1/1993', 2);
 
 --Populate employee department
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (1, (SELECT department_id FROM employee WHERE employee_id = 1));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (2, (SELECT department_id FROM employee WHERE employee_id = 2));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (3, (SELECT department_id FROM employee WHERE employee_id = 3));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (4, (SELECT department_id FROM employee WHERE employee_id = 4));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (5, (SELECT department_id FROM employee WHERE employee_id = 5));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (6, (SELECT department_id FROM employee WHERE employee_id = 6));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (7, (SELECT department_id FROM employee WHERE employee_id = 7));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (8, (SELECT department_id FROM employee WHERE employee_id = 8));
+INSERT INTO employee_department(employee_id, department_id)
+VALUES (9, (SELECT department_id FROM employee WHERE employee_id = 9));
+
+--Populate employee/project
 
 BEGIN TRANSACTION;
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (1, 4);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (2, 3);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (3, 2);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (4, 1);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (5, 4);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (6, 3);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (7, 2);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (8, 1);
+INSERT INTO employee_PROJECT(employee_id, project_id)
+VALUES (9, 2);
+COMMIT;
 
-INSERT INTO employee_department(employee_id, deparment_id)
-SELECT employee_id FROM employee, (SELECT department_id FROM employee WHERE employee_department_employee_id = employee_id);
-
-ROLLBACK;
-
-
-CREATE TABLE employee_department (
-employee_id integer NOT NULL,
-department_id integer NOT NULL,
-CONSTRAINT pk_employee_department_employee_id_department_id PRIMARY KEY(employee_id, department_id)
-);
-
-
-
---BEGIN TRANSACTION
---INSERT INTO inventory
---SELECT store_id, (SELECT film_id FROM film WHERE title = 'Euclidean PI')
---FROM store;
-
-CREATE TABLE employee_project(
-employee_id integer NOT NULL,
-project_id integer NOT NULL,
-CONSTRAINT pk_employee_department_project_id_department_id PRIMARY KEY(employee_id, project_id)
-);
 
 ALTER TABLE employee
 ADD FOREIGN KEY (job_title_id)
