@@ -32,8 +32,7 @@
 --  Format 1: INSERT INTO table-name 
 --            (column-list)           -- must contain all non-null columns
 --            VALUES(value-list)      -- order of values must match order of columns specified
---
---
+
 --  Format 2: INSERT INTO table-name 
 --            VALUES(value-list)      -- order of values must match order of columns as defined in the table
 --
@@ -57,13 +56,38 @@
 -- INSERT
 
 -- 1. Add Klingon as a spoken language in the USA
+INSERT into countrylanguage(countrycode, language, isofficial, percentage)
+VALUES('USA', 'Klingon', true , 55);
+
+SELECT *
+FROM countrylanguage
+WHERE countrycode = 'USA';
+
+ROLLBACK; -- undo any changes since the last commit or rollback, not a bad technique
+
+
+
+
 
 -- 2. Add Klingon as a spoken language in Great Britain
+
 
 
 -- UPDATE
 
 -- 1. Update the capital of the USA to Houston
+
+BEGIN transaction;
+UPDATE country
+SET capital = (Select id FROM city where name = 'Houston')
+WHERE code = 'USA';
+
+SELECT capital
+FROM country
+WHERE code = 'USA';
+
+rollback;
+
 
 -- 2. Update the capital of the USA to Washington DC and the head of state
 
