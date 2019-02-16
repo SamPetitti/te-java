@@ -130,6 +130,7 @@ FROM inventory
 WHERE title = 'EUCLIDEAN PI';
 
 COMMIT;
+
 -- 8. The Feds have stepped in and have impounded all copies of the pirated film, 
 -- "Euclidean PI". The film has been seized from all stores, and needs to be 
 -- deleted from the film table. Delete "Euclidean PI" from the film table. 
@@ -144,7 +145,7 @@ SELECT *
 FROM film
 WHERE title = 'EUCLIDEAN PI';
 
-ROLLBACK;
+COMMIT;
 
 --It does not work becuase it violates foreign key constraint
 
@@ -157,9 +158,9 @@ FROM category
 WHERE name = 'Mathmagical';
 
 SELECT *
-FROM category
+FROM category;
 
-Rollback;
+COMMIT;
 
 --It does not work because it vioalates a foreign key constraint
 
@@ -171,16 +172,17 @@ FROM film_category fc
 WHERE fc.category_id = (
         SELECT cat.category_id FROM category cat WHERE cat.name = 'Mathmagical');
         
-SELECT fc.film_id 
+SELECT fc.category_id,fc.film_id
 FROM film_category fc
         inner join
         category cat
       on fc.category_id = cat.category_id
 ORDER BY 1 desc;
 
+
 COMMIT;
 
---It did succeed because Mathmagical in the film_category table is not a parent element, so other tables are depending on it.
+--It did succeed because Mathmagical in the film_category table is not a parent element, so other tables are not depending on it.
 
 -- 11. Retry deleting Mathmagical from the category table, followed by retrying
 -- to delete "Euclidean PI". 
@@ -217,21 +219,23 @@ COMMIT;
 -- describe any remaining adjustments needed before the film "Euclidean PI" can 
 -- be removed from the film table.
 
-CREATE TABLE film (
-    film_id serial NOT NULL,
-    title varchar(255) NOT NULL,
-    description varchar(512),
-    release_year smallint,
-    language_id integer NOT NULL,
-    original_language_id integer,
-    rental_duration smallint DEFAULT 3 NOT NULL,
-    rental_rate numeric(4,2) DEFAULT 4.99 NOT NULL,
-    length smallint,
-    replacement_cost numeric(5,2) DEFAULT 19.99 NOT NULL,
-    rating varchar(5) DEFAULT 'G',
-    CONSTRAINT pk_film_film_id PRIMARY KEY (film_id),
-    CONSTRAINT ck_film_rating CHECK (rating IN ('G', 'PG', 'PG-13', 'R', 'NC-17'))
-);
+--You would still need to delete the 'EUCLIDEAN PI' film_id  and inventory from the film_actor table where it is a primary key.
 
+BEGIN TRANSACTION;
+
+DELETE 
+FROM film_actor
+WHERE film_id = (SELECT film_id FROM film WHERE title = 'EUCLIDEAN PI');
+
+DELETE
+FROM inventory
+WHERE film_id = (SELECT film_id FROM film WHERE title = 'EUCLIDEAN PI');
+
+
+DELETE 
+FROM film
+WHERE title = 'EUCLIDEAN PI';
+
+ROLLBACK;
 
 
