@@ -217,6 +217,21 @@ COMMIT;
 -- describe any remaining adjustments needed before the film "Euclidean PI" can 
 -- be removed from the film table.
 
+CREATE TABLE film (
+    film_id serial NOT NULL,
+    title varchar(255) NOT NULL,
+    description varchar(512),
+    release_year smallint,
+    language_id integer NOT NULL,
+    original_language_id integer,
+    rental_duration smallint DEFAULT 3 NOT NULL,
+    rental_rate numeric(4,2) DEFAULT 4.99 NOT NULL,
+    length smallint,
+    replacement_cost numeric(5,2) DEFAULT 19.99 NOT NULL,
+    rating varchar(5) DEFAULT 'G',
+    CONSTRAINT pk_film_film_id PRIMARY KEY (film_id),
+    CONSTRAINT ck_film_rating CHECK (rating IN ('G', 'PG', 'PG-13', 'R', 'NC-17'))
+);
 
 
 
