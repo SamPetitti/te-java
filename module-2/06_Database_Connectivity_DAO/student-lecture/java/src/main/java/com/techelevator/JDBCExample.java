@@ -25,7 +25,7 @@ public class JDBCExample {
 		Statement stmt = conn.createStatement();
 		
 		/* Execute a SQL query and return the results */
-		
+		 
 		/* Define a String to hold the SQL query      */
 		String sqlActionFilmsReleaseIn2006 = "SELECT film.title, film.release_year "+
 											 "FROM film JOIN film_category ON film.film_id = film_category.film_id "+

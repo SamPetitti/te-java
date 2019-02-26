@@ -26,6 +26,7 @@ public class DAOExample {
 		dao.save(smallville);
 		
 		City theCity = dao.findCityById(smallville.getId());
+		System.out.println("City = " + theCity.getId() + " " + theCity.getName());
 		
 	}
 

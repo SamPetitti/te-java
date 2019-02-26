@@ -1,10 +1,10 @@
 html {
   font: 96px Courier;
-  color: white;
+  color: white);
 }
 p {
   font: 36px Helvetica;
-  color: black;
+  color: rgb(133, 109, 109);
 }
 .container {
   background-color: black;

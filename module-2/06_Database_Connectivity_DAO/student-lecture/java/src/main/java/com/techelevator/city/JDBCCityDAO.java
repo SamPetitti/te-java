@@ -8,21 +8,21 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
-public class JDBCCityDAO implements CityDAO {
+public class JDBCCityDAO implements CityDAO { //implement the interface for the City talbe
 
-	private JdbcTemplate myJdbcTemplate;
+	private JdbcTemplate myJdbcTemplate; //instantiate a Jbdc object for the DAO
 	
-	public JDBCCityDAO(DataSource aDataSource) {
-		this.myJdbcTemplate = new JdbcTemplate(aDataSource);
+	public JDBCCityDAO(DataSource aDataSource) {  //constructor for DAO, recieves a datasourse when instantiated
+		this.myJdbcTemplate = new JdbcTemplate(aDataSource); //instantiate a jbdcTemplate object and assign class referenc
 	}
 
 	@Override
-	public void save(City newCity) {
+	public void save(City newCity) { //going to add the city object to the database
 		String sqlInsertCity = "INSERT INTO city(id, name, countrycode, district, population) " +
 							   "VALUES(?, ?, ?, ?, ?)";
 		newCity.setId(getNextCityId());
-		myJdbcTemplate.update(sqlInsertCity, newCity.getId(),
-										  newCity.getName(),
+		myJdbcTemplate.update(sqlInsertCity, newCity.getId(), //replace 1st ? w/ value returned by getID();
+										  newCity.getName(), //etc;.
 										  newCity.getCountryCode(),
 										  newCity.getDistrict(),
 										  newCity.getPopulation());
@@ -37,6 +37,7 @@ public class JDBCCityDAO implements CityDAO {
 		SqlRowSet results = myJdbcTemplate.queryForRowSet(sqlFindCityById, id);
 		if(results.next()) {
 			theCity = mapRowToCity(results);
+	
 		}
 		return theCity;
 	}

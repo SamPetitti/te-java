@@ -18,7 +18,8 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
 public class JDBCCityDAOIntegrationTest {
 
-	private static final String TEST_COUNTRY = "XYZ";
+	private static final String TEST_COUNTRY = "XYZ"; //constant that may be used in any test
+													  //global constant (global variable)
 	
 	/* Using this particular implementation of DataSource so that
 	 * every database interaction is part of the same database
@@ -100,7 +101,7 @@ public class JDBCCityDAOIntegrationTest {
 	public void returns_cities_by_district() {
 		String testDistrict = "Tech Elevator";
 		City theCity = getCity("SQL Station", testDistrict, TEST_COUNTRY, 65535);
-		dao.save(theCity);
+		dao.save(theCity); // test the save() in JDBC
 		
 		List<City> results = dao.findCityByDistrict(testDistrict);
 		
@@ -110,6 +111,8 @@ public class JDBCCityDAOIntegrationTest {
 		assertCitiesAreEqual(theCity, savedCity);
 	}
 	
+	
+	//method to construct a City object
 	private City getCity(String name, String district, String countryCode, int population) {
 		City theCity = new City();
 		theCity.setName(name);
