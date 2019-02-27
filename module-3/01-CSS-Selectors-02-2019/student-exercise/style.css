@@ -1,5 +1,8 @@
 /* :root has variables that you can use in your code */
 
+/*Craig, thank you for your help on the flexbox. I just messed around
+with Monday's exercise to get more practice. I used the original code 
+I had written, but the flexbox code is below. -Sam */ 
 
 :root {
     --top-row-height: 120px;
