@@ -35,9 +35,7 @@ body{
     font-family: 'Raleway', sans-serif;
     /*Gradient background, stretch it */
     background-image:  linear-gradient(to bottom, #858c90, #888 );
-
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 
  
