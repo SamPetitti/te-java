@@ -4,6 +4,19 @@ import java.util.Arrays;
 import java.util.Scanner; 
 
 public class Fibonacci {
+	
+	public static void fibo() {
+		int holder = 0;
+		int previous = 0;
+		int num = 1;
+		for(int i = 0; i < 25; i++) {
+				holder = num;
+				num = num + previous;
+				previous = holder;
+				System.out.println(num);
+			}
+		}
+	
 
 	public static void main(String[] args) {
 	Scanner keyBoard = new Scanner(System.in);
@@ -13,6 +26,8 @@ public class Fibonacci {
 	int fiboNumCounter = 0;
 	
 	String fiboLine;
+	
+	fibo();
 	
 	System.out.println("Please enter the Fibonacci number:");
 	

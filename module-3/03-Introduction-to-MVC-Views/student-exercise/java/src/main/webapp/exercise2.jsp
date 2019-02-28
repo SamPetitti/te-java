@@ -13,6 +13,22 @@
 	<body>
 		<h1>Exercise 2 - Fibonacci 25</h1>
 		<ul>
+		<c:set var= "holder" value = "0"/>
+		<c:set var= "previous" value = "0"/>
+		<c:set var= "num" value = "1"/>
+		<c:set var= "fibo" value = ""/>
+	    
+	    <c:forEach begin="1" end="25" var="nums">
+		<c:set var= "holder" value= "${num}"/>
+		<c:set var= "num" value= "${num + previous}"/>
+		<c:set var= "previous" value= "${holder}"/>
+		<c:set var= "fibo" value= "${num}"/>
+		<li>${fibo}</li>
+	    </c:forEach>
+			
+			
+			
+			
 			<%--
 				Add a list item (i.e. <li>) for each of the first 25 numbers in the Fibonacci sequence
 				
