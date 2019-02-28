@@ -27,31 +27,31 @@
 		<h1>Exercise 1 - FizzBuzz</h1>
 		<ul>
 		<c:forEach begin = "1" end= "100" var = "num">
-		<set var = "val" value = ""/>
-		<set var = "stylings" value = ""/>
+		<c:set var = "val" value = ""/>
+		<c:set var = "stylings" value = ""/>
+		<c:choose>
 		
-		<choose>
+		<c:when test="${num % 5 == 0 && value %3 == 0}">
+		<c:set var ="val" value ="FizzBuzz"/>
+		<c:set var ="stylings" value ="fizzbuzz"/>
+		</c:when>
 		
-		<when test="${value % 5 == 0 && value %3 == 0}">
-		<set var ="val" value ="FizzBuzz"/>
-		<set var ="stylings" value ="fizzbuzz"/>
-		</when>
+		<c:when test= "${num % 3 == 0}">
+    	<c:set var ="val" value ="Fizz"/>
+		<c:set var ="stylings" value ="fizz"/>
+		</c:when>
 		
-		<when test= "${value % 3 == 0}">
-		<set var ="val" value ="Fizz"/>
-		<set var ="stylings" value ="fizz"/>
-		</when>
-		<when test= "${value % 5 == 0}">
-		<set var = "val" value = "Fizz"/>
-		<set var = "stylings" value = "buzz"/>
-		</when>
+		<c:when test= "${num % 5 == 0}">
+		<c:set var = "val" value = "Fizz"/>
+		<c:set var = "stylings" value = "buzz"/>
+		</c:when>
 		
-		<otherwise>
-		<set var ="val" value = "${num}"/>
-		<set var="stylings"  value = "li"/>
-		</otherwise>
+		<c:otherwise>
+		<c:set var ="val" value = "${num}"/>
+		<c:set var="stylings"  value ="li"/>
+		</c:otherwise>
 		
-		</choose> 
+		</c:choose> 
 		<li class="${stylings}">${val}</li>
 		</c:forEach>
 		

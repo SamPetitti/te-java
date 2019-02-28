@@ -13,6 +13,7 @@
 				<th>Age</th>
 				<th>Adult</th>
 			</tr>
+			<!-- requestScope is implied -->
 			<c:forEach var="person" items="${personList}">
 				<tr>
 					<td>${person.firstName}</td>
