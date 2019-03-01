@@ -14,12 +14,22 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            <li><a href="productTable">Table</a></li>
+            <li><a href="productList">List</a></li>
+            <li><a href="productTiles">Tiles</a></li>
         </ul>
-        
     </nav>
     <section id="main-content">
+   <c:forEach var = "name" items = "${requestScope.productList}" >
+   	<div>
+           		<div id = "divImage"><img href src="img/${name.getImageName()}"></div>
+           		<div>${name.getName()}</div>
+           		<div>${name.getAverageRating()}</div>
+           		<div>${name.getManufacturer()}</div>
+           		<div>$${name.getPrice()}</div>
+     </div>
+           		
+           </c:forEach>
 
        
 

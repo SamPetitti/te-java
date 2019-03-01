@@ -56,3 +56,17 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
+img {
+	width: 50%;
+}
+
+#divImage {
+	width: 50%;
+}
+
+#listImage {
+	width: 50%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}

@@ -13,38 +13,25 @@
         <h1>MVC Exercises - Views Part 2: Models</h1>        
     </header>
     <nav>
-        <ul>
-            <li><a href="#">List</a></li>
-            <li><a href="#">Table</a></li>
-            <li><a href="#">Tiles</a></li>
+        <ul> 
+             <li><a href="productTable">Table</a></li>
+            <li><a href="productList">List</a></li>
+            <li><a href="productTiles">Tiles</a></li>
+        
         </ul>
         
     </nav>
     <section id="main-content">
-        <table>
-            <tr>
-           <th></th>
-           	<c:forEach var = "image" items = "${requestScope.productList}" >
-           		<td> <img src="img/${image.getImageName()}.jpg">
-           </td>
-           </c:forEach>
-           </tr>
-            <tr> <!-- class = "table-image" -->
-            	<th>name:</th>                    <!-- look in controller for what it's mapping to -->
-            	<c:forEach var = "name" items = "${requestScope.productList}">
-            	<td>${name.getName()}</td>
-   				</c:forEach>
-            </tr>
-              <tr> <!-- class = "table-image" -->
-            	<th>name:</th>                    <!-- look in controller for what it's mapping to -->
-            	<c:forEach var = "name" items = "${requestScope.productList}">
-            	<td>${name.getName()}</td>
-   				</c:forEach>
-              </tr>
-              
-            
-            
-            </table>
+            <ul>
+  
+           	<c:forEach var = "name" items = "${requestScope.productList}" >
+           		<li id = "listImage"><img href src="img/${name.getImageName()}"></li>
+           		<li>${name.getName()}</li>
+           		<li>${name.getAverageRating()}</li>
+           		<li>${name.getManufacturer()}</li>
+           		<li>$${name.getPrice()}</li>
+            </c:forEach>
+           </ul>
           <%--    <tr>
             	<th class = "row-names">Name</th>
             	<c:forEach var = "name" items = "${requestScope.recipes}">

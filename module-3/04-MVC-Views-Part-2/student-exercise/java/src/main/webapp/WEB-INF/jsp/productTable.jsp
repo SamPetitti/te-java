@@ -14,12 +14,55 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
+            <li><a href="productTable">Table</a></li>
+            <li><a href="productList">List</a></li>
+            <li><a href="productTiles">Tiles</a></li>
         </ul>
         
     </nav>
     <section id="main-content">
+            <table>
+            <tr>
+           <th></th>
+           	<c:forEach var = "image" items = "${requestScope.productList}" >
+           		<td><img href src="img/${image.getImageName()}"/>
+           </td>
+           </c:forEach>
+           </tr>
+            <tr class = "table-image"> 
+            	<th>name:</th>                    <!-- look in controller for what it's mapping to -->
+            	<c:forEach var = "name" items = "${requestScope.productList}">
+            	<td>${name.getName()}</td>
+   				</c:forEach>
+            </tr>
+              <tr> <!-- class = "table-image" -->
+            	<th>rating:</th>                    <!-- look in controller for what it's mapping to -->
+            	<c:forEach var = "rating" items = "${requestScope.productList}">
+            	<td>${rating.getAverageRating()}</td>
+   				</c:forEach>
+              </tr>
+                <tr> <!-- class = "table-image" -->
+            	<th>mfr:</th>                    <!-- look in controller for what it's mapping to -->
+            	<c:forEach var = "mfr" items = "${requestScope.productList}">
+            	<td>${mfr.getManufacturer()}</td>
+   				</c:forEach>
+              </tr>
+                <tr> <!-- class = "table-image" -->
+            	<th>price:</th>                    <!-- look in controller for what it's mapping to -->
+            	<c:forEach var = "price" items = "${requestScope.productList}">
+            	<td>$${price.getPrice()}</td>
+   				</c:forEach>
+              </tr>
+                <tr> <!-- class = "table-image" -->
+            	<th>weight:</th>                    <!-- look in controller for what it's mapping to -->
+            	<c:forEach var = "wt" items = "${requestScope.productList}">
+            	<td>${wt.getWeightInLbs()}</td>
+   				</c:forEach>
+              </tr>
+              
+            
+            
+            </table>
 
        
 
