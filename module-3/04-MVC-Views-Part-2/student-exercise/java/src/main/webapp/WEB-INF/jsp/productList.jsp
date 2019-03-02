@@ -22,14 +22,17 @@
         
     </nav>
     <section id="main-content">
-            <ul>
+    		<h1>Toy Department</h1>
+            <ul id = "listFlex">
   
-           	<c:forEach var = "name" items = "${requestScope.productList}" >
+	<c:forEach var = "name" items = "${requestScope.productList}" >
            		<li id = "listImage"><img href src="img/${name.getImageName()}"></li>
+           		<div id = "listItems">
            		<li>${name.getName()}</li>
            		<li>${name.getAverageRating()}</li>
            		<li>${name.getManufacturer()}</li>
            		<li>$${name.getPrice()}</li>
+           		</div>
             </c:forEach>
            </ul>
           <%--    <tr>

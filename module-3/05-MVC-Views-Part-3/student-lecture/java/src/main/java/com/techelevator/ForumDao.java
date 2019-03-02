@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ForumDao {
 
-	private static List<ForumTopic> allTopics;
+	private static List<ForumTopic> allTopics; //Use a List as our model
 	
 	public ForumDao() {
 		allTopics = Arrays.asList(new ForumTopic[]{new ForumTopic(1L, "Should Pluto be a planet???"),
@@ -13,7 +13,7 @@ public class ForumDao {
 								  new ForumTopic(3L, "The Moon Landing was a hoax!!!")});
 	}
 	
-	public List<ForumTopic> readAllTopics() {
+	public List<ForumTopic> readAllTopics() { 
 		return allTopics;
 	}
 	

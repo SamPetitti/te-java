@@ -21,6 +21,7 @@
         
     </nav>
     <section id="main-content">
+    	<h1>Toy Department</h1>
             <table>
             <tr>
            <th></th>

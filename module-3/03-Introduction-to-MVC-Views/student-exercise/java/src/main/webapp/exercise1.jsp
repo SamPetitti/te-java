@@ -31,7 +31,7 @@
 		<c:set var = "stylings" value = ""/>
 		<c:choose>
 		
-		<c:when test="${num % 5 == 0 && value %3 == 0}">
+		<c:when test="${num % 5 == 0 && num % 3 == 0}">
 		<c:set var ="val" value ="FizzBuzz"/>
 		<c:set var ="stylings" value ="fizzbuzz"/>
 		</c:when>
@@ -42,7 +42,7 @@
 		</c:when>
 		
 		<c:when test= "${num % 5 == 0}">
-		<c:set var = "val" value = "Fizz"/>
+		<c:set var = "val" value = "Buzz"/>
 		<c:set var = "stylings" value = "buzz"/>
 		</c:when>
 		

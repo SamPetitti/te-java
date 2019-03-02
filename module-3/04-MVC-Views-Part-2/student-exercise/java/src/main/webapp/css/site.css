@@ -63,10 +63,32 @@ img {
 
 #divImage {
 	width: 50%;
+	justify-content: center;
 }
+
+ul {
+	list-style-type: none;
+}
+
+li { 
+	text-align: left;
+}
+
+#listFlex {
+	margin-top : 40px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
 
 #listImage {
 	width: 50%;
+	display: block;
 }
+
+#listItems {
+	width: 50%;
+}
+
 
 tr:nth-child(even) {background-color: #f2f2f2;}

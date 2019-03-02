@@ -20,14 +20,15 @@
         </ul>
     </nav>
     <section id="main-content">
-   <c:forEach var = "name" items = "${requestScope.productList}" >
-   	<div>
+    <h1>Toy Department</h1>
+   <c:forEach var = "name" items = "${requestScope.productList}">
+   		<div id = "tileDiv">
            		<div id = "divImage"><img href src="img/${name.getImageName()}"></div>
            		<div>${name.getName()}</div>
            		<div>${name.getAverageRating()}</div>
            		<div>${name.getManufacturer()}</div>
            		<div>$${name.getPrice()}</div>
-     </div>
+    	 </div>
            		
            </c:forEach>
 
