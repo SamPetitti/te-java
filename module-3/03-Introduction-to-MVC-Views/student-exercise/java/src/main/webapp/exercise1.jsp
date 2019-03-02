@@ -50,8 +50,8 @@
 		<c:set var ="val" value = "${num}"/>
 		<c:set var="stylings"  value ="li"/>
 		</c:otherwise>
-		
 		</c:choose> 
+		
 		<li class="${stylings}">${val}</li>
 		</c:forEach>
 		

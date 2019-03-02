@@ -1,32 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product Table View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a href="productTable">Table</a></li>
-            <li><a href="productList">List</a></li>
-            <li><a href="productTiles">Tiles</a></li>
-        </ul>
-        
-    </nav>
+<c:import url = "/WEB-INF/jsp/header.jsp"/>
     <section id="main-content">
     	<h1>Toy Department</h1>
             <table>
             <tr>
            <th></th>
-           	<c:forEach var = "image" items = "${requestScope.productList}" >
-           		<td><img href src="img/${image.getImageName()}"/>
+           	<c:forEach var= "image" items= "${requestScope.productList}" >
+           		<c:url var= "url"  value= "productDetail?productId=${image.getProductId()}"></c:url>
+           		<td><a href= "${url}"><img src="img/${image.getImageName()}"/></a>
            </td>
            </c:forEach>
            </tr>

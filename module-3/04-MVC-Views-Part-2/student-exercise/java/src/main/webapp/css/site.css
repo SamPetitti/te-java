@@ -1,3 +1,6 @@
+/* PRODUCT CSS */
+
+
 body {
 	width: 100%;
 	background-color: #212121;
@@ -57,9 +60,9 @@ section {
 	border-radius: 7px;
 }
 
-img {
-	width: 50%;
-}
+ img {
+	width: 90%;
+} 
 
 #divImage {
 	width: 50%;
@@ -70,25 +73,98 @@ ul {
 	list-style-type: none;
 }
 
-li { 
-	text-align: left;
-}
+/* product list css ******************************************* */
+
 
 #listFlex {
 	margin-top : 40px;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 
-#listImage {
+#listImage img {
 	width: 50%;
 	display: block;
 }
 
-#listItems {
-	width: 50%;
+#listItems li {
+	text-align: left;
+	justify-content: left;
 }
 
 
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+/* product tile css ******************************************* */
+
+#mainDiv {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+ #tileDiv {
+	width: 30%;
+	margin: 0px;
+	margin: 10px;
+} 
+
+
+#tilePhoto img {
+	width: 100%;
+}
+
+#tileStar {
+	width: 125px;
+}
+
+h4 {
+	text-align: center;
+}
+
+p {
+	font-size: 12px;
+}
+
+/* product detail css ******************************************* */
+
+ #detail-grid {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+
+#detail-img-grid{
+	width: 45%;
+}
+
+#detail-img {
+	width: 100%;
+}
+
+#detail-name{
+	margin: 0px;
+}
+
+
+
+#detail-info{
+	width: 45%; 
+}
+
+#detail-rating{
+	width: 150px;
+	padding-bottom: 20px;
+}
+
+#detail-weight {
+	padding-bottom: 20px;
+}
+
+
+
