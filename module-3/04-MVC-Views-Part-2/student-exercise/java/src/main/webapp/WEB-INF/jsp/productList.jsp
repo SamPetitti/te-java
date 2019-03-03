@@ -9,7 +9,7 @@
  				<c:url var = "url" value = "productDetail?productId=${name.getProductId()}"></c:url>
            		<li id ="listImage"><a href = "${url}"><img href src="img/${name.getImageName()}"></a></li>
            		<div id ="listItems">
-           		<li>${name.getName()}</li>
+           		<h4 id= listName>${name.getName()}</h4>
            		<li>${name.getAverageRating()}</li>
            		<li>${name.getManufacturer()}</li>
            		<li>$${name.getPrice()}</li>
