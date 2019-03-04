@@ -21,7 +21,7 @@
 
 <h3 id = "detail-name"> ${product.name}</h3>
 <div id = "detail-mfr">by ${product.manufacturer}</div>
-<img id = "detail-rating" src="img/${Math.round(product.getAverageRating())}-star.png"/>
+<img id = "detail-rating" src="img/${Math.round(product.averageRating)}-star.png"/>
 <div id = "detail-price">$${product.price}</div>
 <div id = "detail-weight"><b>Weight: </b> ${product.weightInLbs}</div>
 <div id = "detail-description"><b>Description: </b>${product.description}</div>
