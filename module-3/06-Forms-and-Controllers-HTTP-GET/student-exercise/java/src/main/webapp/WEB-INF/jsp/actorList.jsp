@@ -3,6 +3,11 @@
 <c:set var="pageTitle" value="All Actors List"/>
 
 <%@include file="common/header.jspf"%>
+<c:url var="formAction" value="/searchActors"/>
+<form method="GET" action="${formAction}">
+<input type ="text" name ="actor" id= "actor"/>
+<input type="submit" name= "searchActors" id= "searchActors" />
+</form>
 <!-- Form goes here -->
 <table class="table">
 <tr>
