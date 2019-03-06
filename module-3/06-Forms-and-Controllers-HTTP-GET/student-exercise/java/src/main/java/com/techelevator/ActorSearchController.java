@@ -22,7 +22,7 @@ public class ActorSearchController {
 	private ActorDao actorDao;
 
 	/* What request mapping do we want here */
-	@RequestMapping("/actorList")
+	@RequestMapping({"/", "/actorList"})
 	public String showSearchActorForm() {
 		return "actorList";
 	}
@@ -31,7 +31,7 @@ public class ActorSearchController {
 	@RequestMapping("/searchActors")
 	public String showSearchActorResult(HttpServletRequest request) {
 		/* Call the model and pass values to the jsp */
-		String actor = request.getParameter("name");
+		String actor = request.getParameter("actor");
 		List <Actor> actors = actorDao.getMatchingActors(actor);
 		request.setAttribute("actors", actors);
 		return "actorList";
