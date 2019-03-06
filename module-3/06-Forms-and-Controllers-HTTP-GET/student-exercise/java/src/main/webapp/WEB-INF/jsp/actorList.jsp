@@ -16,6 +16,7 @@
 <c:forEach items="${actors}" var="actor">
 <tr>
     <!-- What do we print here for each actor? -->
+    <td>${actor.firstName} ${actor.lastName}</td>
 </tr>
 </c:forEach>
 </table>
