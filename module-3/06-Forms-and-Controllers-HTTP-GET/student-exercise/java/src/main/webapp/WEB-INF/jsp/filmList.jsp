@@ -3,7 +3,7 @@
 <c:set var="pageTitle" value="All Films List"/>
 
 <%@include file="common/header.jspf"%>
-<c:url var="formAction" value="/filmList"/>
+<c:url var="formAction" value="/filmSearch"/>
 <form method="GET" action="${formAction}">
 <label for="minLength">Minimum Length</label> 
 <input type ="text" name ="minLength" id= "minLength"/>
@@ -34,7 +34,19 @@
 
 <input type="submit" name= "submitFilmSearch" id= "submitFilmSearch" />
 </form>
+<table>
 
+<c:forEach items="${films}" var="film">
+<tr>
+  	<td> ${film.title} </td>
+  	<td>${film.description} </td>
+  	<td> ${film.releaseYear} </td>
+  	<td> ${film.length} </td>
+  	<td> ${film.rating} </td>
+</tr>
+
+</c:forEach>
+</table>
 
 
 <%@include file="common/footer.jspf"%>

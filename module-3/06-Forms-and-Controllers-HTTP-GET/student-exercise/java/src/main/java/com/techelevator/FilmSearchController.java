@@ -2,6 +2,7 @@ package com.techelevator;
 
 import com.techelevator.dao.FilmDao;
 import com.techelevator.dao.model.Actor;
+import com.techelevator.dao.model.Film;
 
 import java.util.List;
 
@@ -28,11 +29,15 @@ public class FilmSearchController {
         	return "filmList";
         }
     
-
-    public String searchFilms() {
-        return null;
+    @RequestMapping("/filmSearch")
+    public String searchFilms(HttpServletRequest request) {
+       int minLength = Integer.parseInt(request.getParameter("minLength"));
+       int maxLength = Integer.parseInt(request.getParameter("maxLength"));
+       String genre = request.getParameter("genre");
+       List<Film> films = filmDao.getFilmsBetween(genre, minLength, maxLength);
+       request.setAttribute("films", films);
+       return "filmList";
     }
-    
     
 }
 
