@@ -17,10 +17,11 @@ public class ReviewController {
 
 @Autowired ReviewDao reviewDao;
 
-	@RequestMapping({"/","/reviewHomePage"})
+	@RequestMapping(path={"/","/reviewHomePage"},method= RequestMethod.GET)
 	public String displayHomePage(HttpServletRequest request) {
 		List<Review> reviews = reviewDao.getAllReviews();
 		request.setAttribute("reviews", reviews);
+		System.out.println(reviews.size());
 		return "reviewHomePage";
 	}
 }
