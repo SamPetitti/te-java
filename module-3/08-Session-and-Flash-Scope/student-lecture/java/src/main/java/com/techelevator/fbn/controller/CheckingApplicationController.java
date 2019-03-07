@@ -55,7 +55,7 @@ public class CheckingApplicationController {
 									 @RequestParam String city,
 									 @RequestParam String state,
 									 @RequestParam String zipCode,
-									 HttpSession session) {
+									 HttpSession session) { /*definining an HTTP object */
 
 		CheckingAccountApplication application = (CheckingAccountApplication)session.getAttribute("customerApplication");
 
@@ -64,7 +64,7 @@ public class CheckingApplicationController {
 		application.setAddressCity(city);
 		application.setAddressState(state);
 		application.setAddressZip(zipCode);
-
+//Now we have an application with all the information(Personal Info & Address 
 		return "redirect:/checkingApplication/summary";
 	}
 

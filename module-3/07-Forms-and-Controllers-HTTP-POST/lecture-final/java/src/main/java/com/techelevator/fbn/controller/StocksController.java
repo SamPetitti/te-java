@@ -21,7 +21,7 @@ import com.techelevator.fbn.model.DollarAmount;
 import com.techelevator.fbn.model.Stock;
 
 @Controller
-@RequestMapping("/fbn")
+@RequestMapping("/fbn") //used for all paths in this class - default home directory for all paths
 @SessionAttributes("stocks")
 public class StocksController {
 	@RequestMapping(path={"/stocks"}, method=RequestMethod.GET)

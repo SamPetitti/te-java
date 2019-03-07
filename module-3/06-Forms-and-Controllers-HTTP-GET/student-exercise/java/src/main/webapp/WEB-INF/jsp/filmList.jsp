@@ -49,11 +49,6 @@
 </table>
 
  <table>
-          <%--   <tr>
-           <th></th>
-           	<c:forEach var= "image" items= "${requestScope.productList}" >
-           		<c:url var= "url"  value= "productDetail?productId=${image.productId}"></c:url>
-           		<td><a href= "${url}"><img src="img/${image.imageName}"/></a>
-           </td> --%>
+          
 
 <%@include file="common/footer.jspf"%>
