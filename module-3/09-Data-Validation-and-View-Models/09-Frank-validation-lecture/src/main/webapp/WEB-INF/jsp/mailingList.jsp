@@ -4,17 +4,20 @@
 <%@include file="common/header.jspf" %>
 <section id="main-content"  class="centeredPanel">
 <c:url value="/mailingList" var="mailingListSignUpUrl" />
-<form:form action="${mailingListSignUpUrl}" method="POST" modelAttribute="SignUp">
+<!-- action= Use this URL on submit
+method= issue a POST on submit
+modelAttribute= Use this model automatically with the form -->
+<form:form action="${mailingListSignUpUrl}" method="POST" modelAttribute="SignUp"> <!-- modelAttribute "SignUp" is the model we are looking for -->
 		<!-- form:errors path="*" cssClass="error"/ -->
         <div>
         	<label for="name">Name</label>
         	<form:input  path="name"  class="form-control"/>
-        	<form:errors path="name"  cssClass="error"/>
-        		
+        	<form:errors path="name"  cssClass="error"/> <!-- Put any error message here -->
+        												 <!-- cssClass attribute IS the name for the error indicator -->
         </div>
         <div>
             <label for="email">Email</label>
-			<form:input  path="email" />            
+			<form:input  path="email" />     
         	<form:errors path="email" cssClass="error"/>
         	<form:errors path="emailMatching" cssClass="error"/>
         </div>

@@ -27,9 +27,9 @@ public class UserController {
 	// Display empty mailingList view 
 	
 	@RequestMapping(path="/mailingList", method=RequestMethod.GET)
-	public String showRegisterForm(Model modelHolder) {
-		if( ! modelHolder.containsAttribute("SignUp")) {
-			modelHolder.addAttribute("SignUp", new SignUp());
+	public String showRegisterForm(Model modelHolder) { //Define a Model called modelHolder
+		if( ! modelHolder.containsAttribute("SignUp")) {//If a modelHolder does NOT have a Signup attribute, 
+			modelHolder.addAttribute("SignUp", new SignUp());//give it one- new SignUp object
 		}
 		return "mailingList";
 	}
@@ -41,7 +41,7 @@ public class UserController {
 	@RequestMapping(path="/mailingList", method=RequestMethod.POST)
 	public String submitRegisterForm(
 			@Valid @ModelAttribute("SignUp") SignUp registerFormValues,
-			BindingResult result,
+			BindingResult result, //object to hold the result of the validation
 			RedirectAttributes flash
 	){
 		if(result.hasErrors()) {
