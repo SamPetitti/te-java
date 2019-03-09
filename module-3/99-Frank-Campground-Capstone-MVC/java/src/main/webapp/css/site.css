@@ -24,3 +24,20 @@ body {
 	padding-top: 4em;
 	text-align : left;
 }
+
+.parkDiv {
+	color: blue;
+	border-bottom: 1px solid;
+}
+
+.parkDiv li {
+	list-style:none;
+}
+
+.parkDiv h2 {
+	color: black;
+}
+
+.parkDiv h5 {
+	margin: 0;
+}
