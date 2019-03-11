@@ -34,7 +34,7 @@
 
 <input type="submit" name= "submitFilmSearch" id= "submitFilmSearch" />
 </form>
-<table>
+<table id= "filmListTable">
 	<tr>
 	<th>Film Title</th>
 	<th>Description</th>

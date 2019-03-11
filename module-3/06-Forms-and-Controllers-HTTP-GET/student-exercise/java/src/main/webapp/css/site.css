@@ -16,5 +16,17 @@ textarea {
     max-width: 280px;
 }
 
+#filmListTable tr {
+  border: 2px solid black;
+  padding: 3px;
+}
 
+#filmListTable tr th {
+  border: 1px solid black;
+    padding: 3px;
+}
 
+#filmListTable tr td {
+  border: 1px solid black;
+    padding: 3px;
+}
