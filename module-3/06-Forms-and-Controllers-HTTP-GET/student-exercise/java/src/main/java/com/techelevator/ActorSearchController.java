@@ -11,9 +11,12 @@ import com.techelevator.dao.model.Actor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller 
 public class ActorSearchController {
@@ -26,7 +29,22 @@ public class ActorSearchController {
 	public String showSearchActorForm() {
 		return "actorList";
 	}
-
+	
+//	@RequestMapping(path= "searchActors", method=RequestMethod.POST)
+//	public String getActorSearch(
+//			@Valid @ModelAttribute("ActorValidationModel") ActorValidationModel newActor,
+//			BindingResult result,
+//			RedirectAttributes flash
+//			) {
+//			if(result.hasErrors()) {
+//				flash.addAttribute(BindingResult.MODEL_KEY_PREFIX + "Registration", result);
+//				flash.addAttribute("ActorValidationModel", newActor);
+//				return "redirect:/register";
+//			}
+//			return "redirect:/register";
+//	}
+	
+	
 	/* What about here? */
 	@RequestMapping("/searchActors")
 	public String showSearchActorResult(HttpServletRequest request) {

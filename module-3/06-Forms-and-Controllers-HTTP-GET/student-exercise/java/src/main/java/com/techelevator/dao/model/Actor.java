@@ -1,10 +1,16 @@
+
+
+
 package com.techelevator.dao.model;
+
+
 /**
  * Actor
  */
 public class Actor {
-    private String firstName;
-    private String lastName;
+	private String firstName;
+  
+	private String lastName;
 
     public Actor(){}
 

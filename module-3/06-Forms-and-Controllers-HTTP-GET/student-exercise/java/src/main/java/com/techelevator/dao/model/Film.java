@@ -4,12 +4,16 @@ package com.techelevator.dao.model;
  * Film
  */
 public class Film {
+
+
     private String title;
     private String description;
     private int releaseYear;
     private int length;
     private String rating;
-	/**
+	
+    
+    /**
 	 * @return the title
 	 */
 	public String getTitle() {

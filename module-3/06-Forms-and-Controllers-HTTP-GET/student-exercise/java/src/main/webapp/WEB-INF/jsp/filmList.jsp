@@ -5,10 +5,10 @@
 <%@include file="common/header.jspf"%>
 <c:url var="formAction" value="/filmSearch"/>
 <form method="GET" action="${formAction}">
-<label for="minLength">Minimum Length</label> 
+<label for="minLength">Minimum Film Length (minutes)</label> 
 <input type ="text" name ="minLength" id= "minLength"/>
 
-<label for="maxLength">Maximum Length</label> 
+<label for="maxLength">Maximum Film Length (minutes)</label> 
 <input type ="text" name ="maxLength" id= "maxLength"/>
 
  <label for="genre">Genre</label> 
@@ -35,8 +35,14 @@
 <input type="submit" name= "submitFilmSearch" id= "submitFilmSearch" />
 </form>
 <table>
-
-<c:forEach items="${films}" var="film">
+	<tr>
+	<th>Film Title</th>
+	<th>Description</th>
+		<th>Release Year</th>
+			<th>Length</th>
+			<th>Rating</th>
+	</tr>
+	<c:forEach items="${films}" var="film">
 <tr>
   	<td> ${film.title} </td>
   	<td>${film.description} </td>
@@ -45,10 +51,11 @@
   	<td> ${film.rating} </td>
 </tr>
 
-</c:forEach>
+</c:forEach> 
+	
+
 </table>
 
- <table>
           
 
 <%@include file="common/footer.jspf"%>
