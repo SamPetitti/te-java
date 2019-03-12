@@ -130,3 +130,40 @@ main {
 footer {
   grid-area: footer;
 }
+
+@media only screen and (min-width: 725px){
+
+}
+
+nav ul {
+   flex-direction: row;
+  justify-content: space-around;
+}
+
+nav ul li {
+  flex-basis: 30%;
+}
+
+main .tweet {
+  flex-basis: 45%;
+}
+
+/* New breakpoint at 900px */
+@media only screen and (min-width: 900px) {
+  /* Redefine the grid so that we have the nav next to the header */ body {
+      grid-template-columns: 2em 1fr 1fr 2em;
+      grid-template-areas:
+          '. header nav .'
+          '. content content .'
+          '. footer footer .';
+  }
+    /* Center the elements in the nav to the center */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+    /* show three tweets side by side */
+    main .tweet {
+      flex-basis: 29%;
+  } }
