@@ -143,3 +143,53 @@ body {
 main div.poster {
   display: none;
 }
+
+/* em lets browser decide based on the font size 
+   em is relative to the base font size
+   rem is relative to the current font size */
+@media only screen and (min-width: 48em){
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between
+  }
+
+  nav ul li{
+    width: 30%;
+    /*margin inherit gets ul from it's parent */
+    margin: inherit; 
+  }
+  
+
+  div.poster {
+    object-fit: cover;
+  }
+
+  .store-button {
+    width: 25%;
+  }
+
+}
+
+@media only seen and (min-width: 64em){
+  /* make a 6 column grid */
+
+body{
+  display:grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+  grid-template-areas: 
+    ". header    header     nav     nav    ."
+    ". main       main      main    main   ."
+    ". order-now order-now  store   store  .";
+    grid-gap: 10px;
+  }
+
+  nav {
+      grid-area: nav;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+  }
+
+  /* have navs be bottom aligned */
+
+}
