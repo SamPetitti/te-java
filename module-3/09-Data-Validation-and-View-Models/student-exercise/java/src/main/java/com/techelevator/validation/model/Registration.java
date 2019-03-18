@@ -64,7 +64,7 @@ public class Registration {
 		}
 	}
 	
-	@NotBlank(message= "required")
+//	@NotBlank(message= "required")
 	@DateTimeFormat(pattern="MM/dd/yyyy")
     @Past 
     private Date birthDate;
