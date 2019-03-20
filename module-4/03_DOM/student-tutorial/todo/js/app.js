@@ -4,7 +4,7 @@ let todos = [];
 let pageTitle = '';
 
 function init() {
-  pageTitle = 'My Morning Routine';
+  pageTitle = 'My Daily Routine';
   todos = [
     { id: 1, task: 'Wake up', completed: false },
     { id: 2, task: 'Brush Teeth', completed: false },
@@ -25,20 +25,26 @@ function addPageTitle() {
   todoList.appendChild(heading);
 }
 
+
 function addTodos() {
   const ul = document.createElement('ul');
+  todoList.appendChild(ul);
   todos.forEach(todo => {
     const li = document.createElement('li')
     li.innerText = todo.task
     ul.appendChild(li)
   });
-  todoList.appendChild(ul);
 }
+
+
+
+
+
 
 // setup our page title and tasks
 init();
-// // add page title to the DOM
-addPageTitle();
-// // add the task to the DOM
-addTodos();
 
+addPageTitle();
+
+
+addTodos();

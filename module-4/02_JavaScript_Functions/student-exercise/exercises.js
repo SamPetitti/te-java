@@ -7,9 +7,10 @@
 
 
 /**
+ * Checks to see if it is summer based on month, day and hemisphere
  * 
  * @param {string} month 
- * @param {number} [second Parameter = 1] day 
+ * @param {number} [second Parameter = 1] 
  * @param {string} [third Parameter= northern] hemisphere 
  * @returns{boolean}
  */
@@ -84,8 +85,8 @@ function useParameterToFilterArray(filterFunction){
  * So if two strings are passed in "42293" and "443", then this function
  * should return thnumber 42293443.
  *
- * @param {string} first the first string of digits to concatenate
- * @param {string} [second=''] the second string of digits to concatenate
+ * @param {string} first first string of digits to concatenate
+ * @param {string} [second='']  second string of digits to concatenate
  * @returns {number} the resultant number
  */
 function makeNumber(first, second= ''){
@@ -118,6 +119,7 @@ function addAll(...num){
 
 
 /**
+ *  attaches 'happy' to every index of the array
  * @param {String[]} array of Strings to concatenate to
  * @returns an array string
  */
@@ -150,6 +152,8 @@ function makeHappy(array){
 
  /**
   * 
+  * takes an array of values relating to properties and returns full addresses
+  * 
   * @param {[]properties} arrayOfProps an array of property objects
   * @returns an array of Strings  
   * 
@@ -173,12 +177,14 @@ function getFullAddressesOfProperties(arrayOfProps){
 
  /**
   * 
+  *  Find the largest element in the array(largest number, latest alphabetically)
+  * 
   * @param {[]numbers or strings} array to find largest element of
-  * @returns largest element in array(largest number, latest alphabetically)
+  * @returns largest element in array
   * 
   */
 
-// This was my original, worse solution
+// This was my original, worse solution :)
 
 // function findLargest(array){
 //   let numHolder = 0;
