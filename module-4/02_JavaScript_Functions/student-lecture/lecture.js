@@ -25,10 +25,12 @@ function printToConsole(value) {
  * Multiply two numbers together. But what happens of we don't pass
  * a value in? What happens if the value is not a number?
  *
- * @param {number} firstParameter the first parameter to multiply
- * @param {number} secondParameter the second parameter to multiply
+ * @param {number} sam the first parameter to multiply
+ * @param {number} jason the second parameter to multiply
  */
-
+function multiplyTogether(sam, jason){
+    return sam * jason;
+}
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the
@@ -38,7 +40,9 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
-
+function multiplyTogether2(sam= 0, jason= 0){
+  return sam* jason;
+}
 /**
  * Scope is defined as where a variable is available to be used.
  *
@@ -75,7 +79,9 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @returns {number} sum of all the numbers
  */
 function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
+  return numbersToSum.reduce((sum, numbersToSum) => {
+      return  sum + numbersToSum;
+  });
 }
 
 /**
@@ -86,4 +92,8 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+   return numbersToFilter.filter((num) => {
+     return num % 3 === 0;
+   });
+}
