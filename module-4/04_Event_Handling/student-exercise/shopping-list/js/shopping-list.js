@@ -13,7 +13,7 @@ const groceries = [
   { id: 10, name: 'Tea', completed: false }
 ];
 
-/**
+  /**
  * This function will get a reference to the title and set its text to the value
  * of the pageTitle variable that was set above.
  */
@@ -37,5 +37,55 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener('DOMContentLoaded', () => {
+
+  setPageTitle();
+  displayGroceries();
+
+  
+const tasks = document.querySelectorAll('li');
+
+
+tasks.forEach((task) => {
+  task.addEventListener('click', () => {
+  if(!task.classList.contains('completed')){
+    task.classList.add('completed');
+    task.querySelector('i').classList.add('completed');
+    }
+  });
+  task.addEventListener('dblclick', () => {
+    if (task.classList.contains('completed')){
+      task.classList.remove('completed');
+      task.querySelector('i').classList.remove('completed');
+    }
+  })
+});
+
+const completeAll = document.getElementById('toggleAll');
+completeAll.style.background = ('green'); 
+completeAll.addEventListener('click', () => {
+  
+  
+  if(allItemsIncomplete === true){
+  document.getElementById('toggleAll').innerText = 'mark all incomplete'; 
+
+  completeAll.style.background = ('red'); 
+  tasks.forEach((task) => {
+    task.classList.add('completed');
+    task.querySelector('i').classList.add('completed');
+    allItemsIncomplete = false;
+    });
+  } else {
+    tasks.forEach((task) => {
+      document.getElementById('toggleAll').innerText = 'mark all complete';  
+      completeAll.style.background = ('green'); 
+      task.classList.remove('completed');
+      task.querySelector('i').classList.remove('completed');
+      allItemsIncomplete = true;
+      });
+    }
+  });
+});
+
+
+

@@ -7,7 +7,15 @@ const reviews = [
     review:
       "It certainly is a book. I mean, I can see that. Pages kept together with glue (I hope that's glue) and there's writing on it, in some language.",
     rating: 3
+  },
+  {
+    reviewer: 'Sam Petitti',
+    title: 'Mediocre at Best!',
+    review:
+     "It certainly doesn't compare to any Tolstoy or Proust",
+    rating: 2
   }
+
 ];
 
 /**
@@ -59,9 +67,39 @@ function displayReview(review) {
 }
 
 
-// set the product reviews page title
-setPageTitle();
-// set the product reviews page description
-setPageDescription();
-// display all of the product reviews on our page
-displayReviews();
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // set the product reviews page title
+    setPageTitle();
+    // set the product reviews page description
+    setPageDescription();
+    // display all of the product reviews on our page
+    displayReviews();
+});
+
+// When the user clicks the description, they can change it
+// Show input box when the click it
+// btnToggleForm
+// class= "description"
+// Get a reference to the element to manipulate
+
+const reviewDesc = document.querySelector('.description');
+reviewDesc.addEventListener('click', (event) => {
+    changeDescription(event.target)     
+})
+
+function changeDescription(reviewDesc){
+  // unhide the input box
+  //get the data from the input box
+  //set the description element to the data
+  //get a reference to element change
+  const textBox = reviewDesc.nextElementSibling; //get a reference to element change
+  
+  reviewDesc.innerText = textBox.value;
+  textBox.classList.remove('d-none');  //remove the do not display
+  reviewDesc.classList.add('d-none');
+  textBox.focus();
+}
