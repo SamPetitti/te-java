@@ -68,7 +68,6 @@ completeAll.addEventListener('click', () => {
   
   if(allItemsIncomplete === true){
   document.getElementById('toggleAll').innerText = 'mark all incomplete'; 
-
   completeAll.style.background = ('red'); 
   tasks.forEach((task) => {
     task.classList.add('completed');

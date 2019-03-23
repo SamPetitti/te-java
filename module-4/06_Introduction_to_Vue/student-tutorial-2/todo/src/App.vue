@@ -1,16 +1,17 @@
 <template>
   <div id="todo-app">
+    <h2>Hello Java Jazzers</h2>
     <todo-list></todo-list>
   </div>
 </template>
 
 <script>
-
+import TodoList from '../Components/TodoList';
 
 export default {
   name: 'app',
   components: {
-    
+    TodoList
   }
 }
 </script>
