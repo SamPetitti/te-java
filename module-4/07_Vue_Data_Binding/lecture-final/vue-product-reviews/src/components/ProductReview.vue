@@ -38,11 +38,12 @@
                 5 Star Review{{ numberOfFiveStarReviews === 1 ? '' : 's' }}
             </div>
         </div>
-
+        <!-- give me one of the following <div> for each item in the array -->
         <div class="review" v-for="review in reviews" v-bind:key="review.id">
             <h4>{{ review.reviewer }}</h4>
             <div class="rating">
                 <img src="../assets/star.png" v-bind:title="review.rating + ' Star Review'" class="ratingStar" v-for="n in review.rating" />
+                                        <!-- v-bind:title adds title to the image -->
             </div>
             <h3>{{ review.title }}</h3>
 
@@ -91,7 +92,7 @@ export default {
         };
     },
     computed: {
-        averageRating(vm) {
+        averageRating(vm) { //vm is the component calling the method
             let sum = vm.reviews.reduce( (currentSum, review) => {
                 return currentSum + review.rating;
             }, 0);
