@@ -202,7 +202,21 @@ describe('ProductReview', () => {
         rating: 5
       }
     ];
-
-    
+  it('should return only count of one star reviews', () => {
+  wrapper.setData({reviews: testReviews});
+  wrapper.vm.numberOfOneStarReviews.should.equal(1);
   });
+   it('should return only count of one star reviews', () => {
+    wrapper.setData({reviews: testReviews});
+    wrapper.vm.numberOfOneStarReviews.should.equal(1);
+     });
+   it('should return only count of one star reviews', () => {
+    wrapper.setData({reviews: testReviews});
+    wrapper.vm.numberOfOneStarReviews.should.equal(1);
+    });
+    it('should return only count of one star reviews', () => {
+    wrapper.setData({reviews: testReviews});
+    wrapper.vm.numberOfOneStarReviews.should.equal(1);
+      });
+   });
 });
