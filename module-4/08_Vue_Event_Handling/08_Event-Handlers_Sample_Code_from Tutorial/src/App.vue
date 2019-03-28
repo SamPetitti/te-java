@@ -1,8 +1,8 @@
- <!--  Sample Code with Inline Function Event Handling -->
+ <!--  Sample Code with Inline Function Event Handling 
 <template>
   <div id="app">
   <p> Sample Code with Inline Function Event Handling</p>
-   <a href="#" id="increase" class="btn" v-on:click="counter += 1">
+   <a href="#" id="increase" class="btn" v-on:click="counter += 10000000000">
     Increase
   </a>
   <a href="#" id="decrease" class="btn" v-on:click="counter -= 1">
@@ -23,7 +23,7 @@ export default {
 };
 
 </script>
-
+-->
 <!-- Sample code with Method Event Handlers 
 <template>
   <div id="app">
@@ -44,10 +44,10 @@ export default {
   },
   methods: {
     increase() {
-      this.counter += 1;
+      this.counter += 1; //this component's counter is incremented
     },
     decrease() {
-      this.counter -= 1;
+      this.counter -= 1; //this component's counter is decremented
     }
   }
 };
@@ -83,7 +83,7 @@ export default {
 };
 </script>
 -->
-<!-- Sample code with Implicit Event object 
+<!-- Sample code with Implicit Event object -->
 <template>
   <div id="app">
     <p> Sample Code with Implicit Event Object</p>
