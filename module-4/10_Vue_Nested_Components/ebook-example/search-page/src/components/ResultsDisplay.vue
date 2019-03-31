@@ -23,7 +23,7 @@
 export default {
     name: 'results-display',
     props: {
-        results: Object
+        results: Object // results is a general Object, the actual data we defined when we have date 
     }
 }
 </script>

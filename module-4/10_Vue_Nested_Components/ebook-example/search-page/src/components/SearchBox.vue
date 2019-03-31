@@ -39,9 +39,11 @@ export default {
          * @returns {Promise} the promise from fetch for unit testing
          */
         performSearch() {
+            //fetch() - go to the searchURL API with the search value and the paraemter to request data in the json format
+            //.then - wait for the response from the api and then return the json data in the response
             return fetch(this.searchUrl + this.search + '?format=json').then((response) => {
                 return response.json();
-            }).then((results) => {
+            }).then((results) => { //after we process the response - issue a custom event
                 /**
                  * Contains search results as an object with `Results` that is
                  * an array of objects.
