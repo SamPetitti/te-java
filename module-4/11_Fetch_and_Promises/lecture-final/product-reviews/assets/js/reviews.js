@@ -20,7 +20,7 @@ function loadReviews() {
 function displayReviews() {
   console.log("Display Reviews...");
 
-  if('content' in document.createElement('template')) {
+  if('content' in document.createElement('template')) { //if there is a <template> in the html
     const container = document.querySelector(".reviews");
     reviews.forEach((review) => {
       const tmpl = document.getElementById('review-template').content.cloneNode(true);
@@ -39,5 +39,5 @@ function displayReviews() {
 const button = document.querySelector("button");
   button.addEventListener("click",function() {
   loadReviews();
-  button.disabled = true;
+  button.disabled = !button.disabled
 });

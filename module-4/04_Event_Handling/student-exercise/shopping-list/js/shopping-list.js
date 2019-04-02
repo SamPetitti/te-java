@@ -26,7 +26,7 @@ function setPageTitle() {
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
 function displayGroceries() {
-  const ul = document.querySelector('ul');
+  const ul = document.querySelector('.shopping-list ul');
   groceries.forEach((item) => {
     const li = document.createElement('li');
     li.innerText = item.name;
@@ -43,20 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
   displayGroceries();
 
   
-const tasks = document.querySelectorAll('li');
+const groceries = document.querySelectorAll('li');
 
 
-tasks.forEach((task) => {
-  task.addEventListener('click', () => {
-  if(!task.classList.contains('completed')){
-    task.classList.add('completed');
-    task.querySelector('i').classList.add('completed');
+groceries.forEach((item) => {
+  item.addEventListener('click', () => {
+  if(!item.classList.contains('completed')){
+    item.classList.add('completed');
+    item.querySelector('i').classList.add('completed');
     }
   });
-  task.addEventListener('dblclick', () => {
-    if (task.classList.contains('completed')){
-      task.classList.remove('completed');
-      task.querySelector('i').classList.remove('completed');
+  item.addEventListener('dblclick', () => {
+    if (item.classList.contains('completed')){
+      item.classList.remove('completed');
+      item.querySelector('i').classList.remove('completed');
     }
   })
 });
@@ -69,17 +69,17 @@ completeAll.addEventListener('click', () => {
   if(allItemsIncomplete === true){
   document.getElementById('toggleAll').innerText = 'mark all incomplete'; 
   completeAll.style.background = ('red'); 
-  tasks.forEach((task) => {
+  groceries.forEach((task) => {
     task.classList.add('completed');
     task.querySelector('i').classList.add('completed');
     allItemsIncomplete = false;
     });
   } else {
-    tasks.forEach((task) => {
+    groceries.forEach((item) => {
       document.getElementById('toggleAll').innerText = 'mark all complete';  
       completeAll.style.background = ('green'); 
-      task.classList.remove('completed');
-      task.querySelector('i').classList.remove('completed');
+      item.classList.remove('completed');
+      item.querySelector('i').classList.remove('completed');
       allItemsIncomplete = true;
       });
     }

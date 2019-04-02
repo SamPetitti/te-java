@@ -65,7 +65,7 @@ export default {
                     reviewer: "Malcolm Gladwell",
                     title: 'What a book!',
                     review: "It certainly is a book. I mean, I can see that. Pages kept together with glue (I hope that's glue) and there's writing on it, in some language.",
-                    rating: 3
+                    rating: 9
                 },
                 {
                     id: 2,

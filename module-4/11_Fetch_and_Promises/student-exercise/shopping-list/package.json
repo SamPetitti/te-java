@@ -4,7 +4,7 @@
   "description": "This exercise will test your knowledge of The Fetch API & Promises ",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress run"
   },
   "keywords": [],
   "author": "Tech Elevator",

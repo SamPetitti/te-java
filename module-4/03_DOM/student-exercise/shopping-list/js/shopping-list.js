@@ -25,6 +25,19 @@ function displayGroceries() {
 
 }
 
+let shoppingList = document.querySelector('.shopping-list');
+let shopItems = shoppingList.childNodes;
+let shopArr = Array.from(shopItems);
+
+function showChildren(){
+shopArr.forEach((element) => {
+  console.log(element);
+});
+}
+
+showChildren();
+
+
 /**
  * This function will be called wh4en the button is clicked. You will need to get a reference
  * to every list item and add the class completed to each one
@@ -39,7 +52,10 @@ function markCompleted() {
 
 setPageTitle();
 
+
+
 displayGroceries();
+
 
 // Don't worry too much about what is going on here, we will cover this when we discuss events.
 document.addEventListener('DOMContentLoaded', () => {
