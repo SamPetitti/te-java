@@ -19,7 +19,8 @@
 export default {
     data() {
         return {
-            groceries: []
+            API_URL: "http://5ca4b64eddab6d0014bc8360.mockapi.io/api/shopping-list",
+            groceries: [],
         }
     },
     methods: {
@@ -34,7 +35,18 @@ export default {
                 checkbox.checked = !checkbox.checked;
             }
         }
-    }
+    },
+      created(){  
+      fetch(this.API_URL)
+        .then((response) => {
+          return response.json();
+        })
+        .then((groceries) => {
+            this.groceries = groceries;
+        })
+        .catch((err) => console.error(err));
+      }
+  
 }
 </script>
 
